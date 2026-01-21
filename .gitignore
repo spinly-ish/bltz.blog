@@ -13,15 +13,19 @@ docs/
 *~
 .DS_Store
 
-# Dependencies (if you add npm later)
+# Dependencies
 node_modules/
-package-lock.json
-yarn.lock
 
-# Build outputs (for future React build)
+# Build outputs (Vite)
 dist/
 build/
 .cache/
+
+# Old static files (before React migration)
+index-old.html
+app-detail.html
+css/
+js/
 
 # Environment variables
 .env

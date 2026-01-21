@@ -4,21 +4,28 @@ iOS App Reviews & Recommendations — affiliate website for curated iOS apps.
 
 ## 🚀 Project Overview
 
-A dynamic website showcasing iOS app reviews with affiliate links to the App Store. Built as a learning project with plans to migrate to React.
+A dynamic website showcasing iOS app reviews with affiliate links to the App Store. Built as a learning project, now powered by **React + Vite**.
 
 ## 📁 Project Structure
 
 ```
 bltz.blog/
-├── index.html          # Main page (cards generated dynamically)
-├── app-detail.html     # App detail page (loads data from URL params)
-├── css/
-│   └── styles.css      # All styles (CSS variables, responsive)
-├── js/
-│   ├── apps-data.js    # Centralized app database (15 apps)
-│   └── main.js         # Dynamic rendering & routing
-├── docs/
-│   └── LEARNING_GUIDE.md  # Educational documentation (gitignored)
+├── index.html              # Entry point for Vite
+├── package.json            # Dependencies & scripts
+├── vite.config.js          # Vite configuration
+├── src/
+│   ├── main.jsx            # React entry point
+│   ├── App.jsx             # Root component (state management)
+│   ├── index.css           # Global styles (CSS Variables)
+│   ├── components/
+│   │   ├── Header.jsx      # Site header
+│   │   ├── Sidebar.jsx     # Category navigation (controlled)
+│   │   ├── AppGrid.jsx     # Grid of app cards
+│   │   ├── AppCard.jsx     # Reusable app card component ⭐
+│   │   └── Footer.jsx      # Site footer
+│   └── data/
+│       └── appsData.js     # Centralized app database (ES6 module)
+├── docs/                   # Learning documentation (gitignored)
 └── README.md
 ```
 
@@ -26,9 +33,8 @@ bltz.blog/
 
 - **Dark theme** inspired by modern app stores
 - **Responsive design** (mobile-first approach)
-- **Dynamic card generation** from JavaScript data
-- **URL-based routing** for app detail pages
-- **Category filtering** with real-time updates
+- **React components** with proper prop validation
+- **Category filtering** with useState
 - **Real VPN apps** with actual App Store links
 
 ## 🛡️ VPN Apps (Real)
@@ -43,29 +49,39 @@ Based on [vpnMentor's Top 5 VPNs 2026](https://www.vpnmentor.com):
 
 ## 🛠️ Tech Stack
 
-**Current (Phase 1-2):**
-- HTML5
+**Current (Phase 3):**
+- React 18
+- Vite 5
 - CSS3 (CSS Variables, Flexbox, Grid)
-- Vanilla JavaScript (Dynamic rendering, URL params)
+- PropTypes for component validation
 
-**Planned (Phase 3):**
-- React
+**Planned (Phase 4):**
+- React Router (for app detail pages)
 - TypeScript
-- React Router
-- Tailwind CSS
+- Tailwind CSS (optional)
 
 ## 🏃 Getting Started
 
-1. Clone the repository
-2. Open `index.html` in your browser
-3. Or use a local server:
+### Development
 
 ```bash
-# Using Python
-python3 -m http.server 8080
+# Install dependencies
+npm install
 
-# Using Node.js
-npx serve
+# Start development server
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+### Production Build
+
+```bash
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
 
 ## 📝 Development Roadmap
@@ -85,11 +101,13 @@ npx serve
 - [x] Real VPN apps with App Store links
 - [x] Related apps section
 
-### Phase 3: React Migration
-- [ ] Set up Vite + React
-- [ ] Convert to components (AppCard, AppDetail)
+### Phase 3: React Migration ⏳
+- [x] Set up Vite + React
+- [x] Convert to components (AppCard, AppGrid, Sidebar)
+- [x] State management (useState)
+- [x] PropTypes validation
 - [ ] Add React Router
-- [ ] State management (useState, useContext)
+- [ ] App detail page in React
 
 ### Phase 4: Production
 - [ ] Real app reviews & content

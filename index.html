@@ -1,110 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="https://cdn.amplitude.com/libs/analytics-browser-2.11.1-min.js.gz"></script>
-    <script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.25.0-min.js.gz"></script>
-    <script>window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));window.amplitude.init('eb6782fc0bc08bc16c8702c5aaf48873', {"autocapture":{"elementInteractions":true}});</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>bltz.blog - Best iOS Apps Reviewed</title>
     <meta name="description" content="Discover the best iOS apps for productivity, design, VPN, and everyday use. Expert reviews and honest recommendations.">
-    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Amplitude Analytics (optional - can be removed for development) -->
+    <script src="https://cdn.amplitude.com/libs/analytics-browser-2.11.1-min.js.gz"></script>
+    <script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.25.0-min.js.gz"></script>
+    <script>window.amplitude.add(window.sessionReplay.plugin({sampleRate: 1}));window.amplitude.init('eb6782fc0bc08bc16c8702c5aaf48873', {"autocapture":{"elementInteractions":true}});</script>
+    
+    <!-- GitHub Pages SPA redirect handler -->
+    <script>
+        (function(l) {
+            if (l.search[1] === '/') {
+                var decoded = l.search.slice(1).split('&').map(function(s) { 
+                    return s.replace(/~and~/g, '&')
+                }).join('?');
+                window.history.replaceState(null, null,
+                    l.pathname.slice(0, -1) + decoded + l.hash
+                );
+            }
+        }(window.location))
+    </script>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="header-container">
-            <a href="index.html" class="logo">
-                <span class="logo-icon">⚡</span>
-                <span class="logo-text">bltz.blog</span>
-            </a>
-            <nav class="header-nav">
-                <a href="#" class="btn btn-ghost">Sign In</a>
-                <a href="#" class="btn btn-primary">Create Account</a>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="main">
-        <div class="main-container">
-            <!-- Sidebar with Categories -->
-            <aside class="sidebar">
-                <h2 class="sidebar-title">Categories</h2>
-                <ul class="category-list">
-                    <li><a href="#" class="category-item active" data-category="all">
-                        <span class="category-icon">🔥</span>
-                        <span>All Apps</span>
-                    </a></li>
-                    <li><a href="#" class="category-item" data-category="vpn">
-                        <span class="category-icon">🛡️</span>
-                        <span>VPN</span>
-                    </a></li>
-                    <li><a href="#" class="category-item" data-category="trending">
-                        <span class="category-icon">📈</span>
-                        <span>Trending</span>
-                    </a></li>
-                    <li><a href="#" class="category-item" data-category="productivity">
-                        <span class="category-icon">⚡</span>
-                        <span>Productivity</span>
-                    </a></li>
-                    <li><a href="#" class="category-item" data-category="design">
-                        <span class="category-icon">🎨</span>
-                        <span>Design</span>
-                    </a></li>
-                    <li><a href="#" class="category-item" data-category="photo">
-                        <span class="category-icon">📷</span>
-                        <span>Photo & Video</span>
-                    </a></li>
-                    <li><a href="#" class="category-item" data-category="writing">
-                        <span class="category-icon">✍️</span>
-                        <span>Writing</span>
-                    </a></li>
-                    <li><a href="#" class="category-item" data-category="utilities">
-                        <span class="category-icon">🔧</span>
-                        <span>Utilities</span>
-                    </a></li>
-                    <li><a href="#" class="category-item" data-category="health">
-                        <span class="category-icon">💪</span>
-                        <span>Health & Fitness</span>
-                    </a></li>
-                    <li><a href="#" class="category-item" data-category="finance">
-                        <span class="category-icon">💰</span>
-                        <span>Finance</span>
-                    </a></li>
-                    <li><a href="#" class="category-item" data-category="social">
-                        <span class="category-icon">💬</span>
-                        <span>Social</span>
-                    </a></li>
-                </ul>
-            </aside>
-
-            <!-- App Cards Grid -->
-            <section class="content">
-                <div class="content-header">
-                    <h1 class="content-title">All Apps</h1>
-                    <p class="content-subtitle">Curated collection of the best iOS apps</p>
-                </div>
-
-                <!-- Cards are dynamically generated by JavaScript -->
-                <div class="app-grid"></div>
-            </section>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-container">
-            <p>&copy; 2026 bltz.blog. All rights reserved.</p>
-            <p class="footer-note">Affiliate disclosure: We may earn a commission from qualifying purchases.</p>
-        </div>
-    </footer>
-
-    <!-- Load data first, then main script -->
-    <script src="js/apps-data.js"></script>
-    <script src="js/main.js"></script>
+    <!-- React root element -->
+    <div id="root"></div>
+    
+    <!-- Vite injects the script here -->
+    <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>
