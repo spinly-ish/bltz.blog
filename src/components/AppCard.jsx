@@ -28,24 +28,24 @@ function AppCard({ app }) {
         category,
         categoryDisplay,
         rating,
-        icon,
-        gradient
+        iconImage
     } = app;
 
     return (
         // Link из React Router — правильный способ навигации в SPA
         // to={`/app/${id}`} — относительный путь, basename добавится автоматически
-        <Link 
+        <Link
             to={`/app/${id}`}
-            className="app-card" 
+            className="app-card"
             data-category={category}
         >
-            {/* Иконка приложения с градиентным фоном */}
-            <div 
-                className="app-icon" 
-                style={{ background: gradient }}
-            >
-                <span>{icon}</span>
+            {/* Иконка приложения */}
+            <div className="app-icon">
+                <img
+                    src={iconImage}
+                    alt={`${name} icon`}
+                    loading="lazy"
+                />
             </div>
             
             {/* Информация о приложении */}
@@ -73,8 +73,7 @@ AppCard.propTypes = {
         category: PropTypes.string.isRequired,
         categoryDisplay: PropTypes.string.isRequired,
         rating: PropTypes.number.isRequired,
-        icon: PropTypes.string.isRequired,
-        gradient: PropTypes.string.isRequired,
+        iconImage: PropTypes.string.isRequired,
     }).isRequired,
 };
 

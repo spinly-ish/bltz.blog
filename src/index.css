@@ -206,6 +206,34 @@ img {
     height: 24px;
 }
 
+.btn-website {
+    background: var(--accent-gradient);
+    color: var(--text-primary);
+    padding: var(--spacing-md) var(--spacing-xl);
+    font-size: var(--font-size-md);
+}
+
+.btn-website:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+.btn-website svg {
+    width: 20px;
+    height: 20px;
+}
+
+.btn-large.btn-website svg {
+    width: 24px;
+    height: 24px;
+}
+
+.app-detail-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+}
+
 /* ============================================
    Main Layout
    ============================================ */
@@ -342,8 +370,16 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 28px;
     flex-shrink: 0;
+    overflow: hidden;
+    background: var(--bg-secondary);
+}
+
+.app-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-md);
 }
 
 .app-info {
@@ -433,8 +469,16 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 56px;
     flex-shrink: 0;
+    overflow: hidden;
+    background: var(--bg-secondary);
+}
+
+.app-detail-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--radius-xl);
 }
 
 .app-detail-info {
@@ -510,6 +554,20 @@ img {
 
 .screenshot-placeholder p {
     font-size: var(--font-size-xs);
+}
+
+.screenshot-item {
+    aspect-ratio: 9/16;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+}
+
+.screenshot-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 /* Description */

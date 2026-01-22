@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:zamesin.ru)",
+      "Bash(curl:*)",
+      "Bash(python3:*)"
+    ]
+  }
+}
