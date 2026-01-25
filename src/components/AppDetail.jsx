@@ -9,6 +9,7 @@
  * Структура и классы соответствуют оригинальному app-detail.html
  */
 
+import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getAppById, getAppsByCategory } from '../data/appsData';
 import AppCard from './AppCard';
@@ -16,6 +17,11 @@ import AppCard from './AppCard';
 function AppDetail() {
     // useParams — хук React Router, извлекает параметры из URL
     const { id } = useParams();
+
+    // Сброс скролла при переходе на страницу или смене приложения
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [id]);
     
     // Получаем данные приложения по ID
     const app = getAppById(id);
