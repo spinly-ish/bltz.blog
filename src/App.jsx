@@ -8,7 +8,7 @@
  */
 
 import { useState } from 'react'
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
@@ -21,15 +21,11 @@ function App() {
         id: 'all'
     });
 
-    // Check if we're on the home page to show navigation
-    const location = useLocation();
-    const isHomePage = location.pathname === '/';
-
     return (
         <>
-            {/* Header — site header with navigation on home page */}
+            {/* Header — site header with navigation */}
             <Header
-                showNav={isHomePage}
+                showNav={true}
                 activeFilter={activeFilter}
                 onFilterChange={setActiveFilter}
             />

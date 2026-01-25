@@ -6,12 +6,14 @@
  */
 
 import { useState, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { categories, setups } from '../data/appsData'
 
 function HeaderNav({ activeFilter, onFilterChange }) {
     const [openMenu, setOpenMenu] = useState(null);
     const timeoutRef = useRef(null);
+    const navigate = useNavigate();
 
     const handleMouseEnter = (menuId) => {
         clearTimeout(timeoutRef.current);
@@ -25,6 +27,7 @@ function HeaderNav({ activeFilter, onFilterChange }) {
     const handleItemClick = (type, id) => {
         onFilterChange({ type, id });
         setOpenMenu(null);
+        navigate('/');
     };
 
     // Check if a filter item is active
