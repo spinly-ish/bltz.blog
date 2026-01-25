@@ -1,39 +1,56 @@
 /**
- * App.jsx — корневой компонент приложения
- * 
- * Отвечает за:
- * 1. Маршрутизацию (React Router)
- * 2. Общую структуру страницы (Header, Footer)
- * 3. Рендер нужной страницы в зависимости от URL
+ * App.jsx — Root application component
+ *
+ * Responsible for:
+ * 1. Routing (React Router)
+ * 2. Page layout (Header, Footer)
+ * 3. Filter state management (lifted from HomePage for Header access)
  */
 
-import { Routes, Route } from 'react-router-dom'
+import { useState } from 'react'
+import { Routes, Route, useLocation } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
 import AppDetail from './components/AppDetail'
 
 function App() {
-  return (
-    <>
-      {/* Header — шапка сайта (на всех страницах) */}
-      <Header />
-      
-      {/* Routes — контейнер для маршрутов */}
-      {/* Route — определяет какой компонент показать для какого URL */}
-      <Routes>
-        {/* Главная страница — список всех приложений */}
-        <Route path="/" element={<HomePage />} />
-        
-        {/* Страница детальной информации о приложении */}
-        {/* :id — динамический параметр, доступен через useParams() */}
-        <Route path="/app/:id" element={<AppDetail />} />
-      </Routes>
-      
-      {/* Footer — подвал сайта (на всех страницах) */}
-      <Footer />
-    </>
-  )
+    // Filter state: { type: 'category' | 'setup', id: string }
+    const [activeFilter, setActiveFilter] = useState({
+        type: 'category',
+        id: 'all'
+    });
+
+    // Check if we're on the home page to show navigation
+    const location = useLocation();
+    const isHomePage = location.pathname === '/';
+
+    return (
+        <>
+            {/* Header — site header with navigation on home page */}
+            <Header
+                showNav={isHomePage}
+                activeFilter={activeFilter}
+                onFilterChange={setActiveFilter}
+            />
+
+            {/* Routes — route container */}
+            <Routes>
+                {/* Home page — app list */}
+                <Route
+                    path="/"
+                    element={<HomePage activeFilter={activeFilter} />}
+                />
+
+                {/* App detail page */}
+                {/* :id — dynamic parameter, accessible via useParams() */}
+                <Route path="/app/:id" element={<AppDetail />} />
+            </Routes>
+
+            {/* Footer — site footer */}
+            <Footer />
+        </>
+    );
 }
 
-export default App
+export default App;

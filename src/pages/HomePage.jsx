@@ -1,55 +1,74 @@
 /**
- * HomePage.jsx — Главная страница со списком приложений
- * 
- * Вынесена из App.jsx для чистоты кода при использовании роутинга.
- * Содержит:
- * - Sidebar с категориями
- * - Сетку карточек приложений
- * - Фильтрацию по категориям
+ * HomePage.jsx — Home page with app list
+ *
+ * Contains:
+ * - App card grid
+ * - Filtering by categories and setups
+ *
+ * Filter state is lifted to App.jsx for Header access.
  */
 
-import { useState } from 'react'
-import Sidebar from '../components/Sidebar'
+import PropTypes from 'prop-types'
 import AppGrid from '../components/AppGrid'
-import { appsData, getAppsByCategory } from '../data/appsData'
+import { getAppsByCategory, getAppsBySetup, getSetupById, categories } from '../data/appsData'
 
-function HomePage() {
-    // useState — React хук для управления состоянием
-    // activeCategory хранит текущую выбранную категорию
-    const [activeCategory, setActiveCategory] = useState('all')
-    
-    // Фильтруем приложения по выбранной категории
-    const filteredApps = getAppsByCategory(activeCategory)
-    
-    // Определяем заголовок на основе выбранной категории
-    const getCategoryTitle = () => {
-        if (activeCategory === 'all') return 'All Apps'
-        const app = appsData.find(a => a.category === activeCategory)
-        return app ? app.categoryDisplay : 'All Apps'
-    }
+function HomePage({ activeFilter }) {
+    // Get filtered apps based on filter type
+    const getFilteredApps = () => {
+        if (activeFilter.type === 'category') {
+            return getAppsByCategory(activeFilter.id);
+        } else if (activeFilter.type === 'setup') {
+            return getAppsBySetup(activeFilter.id);
+        }
+        return [];
+    };
+
+    // Get title based on current filter
+    const getTitle = () => {
+        if (activeFilter.type === 'category') {
+            const category = categories.find(c => c.id === activeFilter.id);
+            return category ? category.name : 'All Apps';
+        } else if (activeFilter.type === 'setup') {
+            const setup = getSetupById(activeFilter.id);
+            return setup ? setup.name : 'Setup';
+        }
+        return 'All Apps';
+    };
+
+    // Get subtitle based on current filter
+    const getSubtitle = () => {
+        if (activeFilter.type === 'setup') {
+            const setup = getSetupById(activeFilter.id);
+            return setup ? setup.description : 'Curated app collection';
+        }
+        return 'Curated collection of the best macOS apps';
+    };
+
+    const filteredApps = getFilteredApps();
 
     return (
         <main className="main">
-            <div className="main-container">
-                {/* Sidebar — боковая панель с категориями */}
-                <Sidebar 
-                    activeCategory={activeCategory} 
-                    onCategoryChange={setActiveCategory}
-                />
-                
-                {/* Контент — сетка карточек приложений */}
+            <div className="main-container main-container--no-sidebar">
+                {/* Content — app cards grid */}
                 <section className="content">
                     <div className="content-header">
-                        <h1 className="content-title">{getCategoryTitle()}</h1>
-                        <p className="content-subtitle">Curated collection of the best iOS apps</p>
+                        <h1 className="content-title">{getTitle()}</h1>
+                        <p className="content-subtitle">{getSubtitle()}</p>
                     </div>
-                    
-                    {/* AppGrid — сетка карточек */}
+
+                    {/* AppGrid — card grid */}
                     <AppGrid apps={filteredApps} />
                 </section>
             </div>
         </main>
-    )
+    );
 }
 
-export default HomePage
+HomePage.propTypes = {
+    activeFilter: PropTypes.shape({
+        type: PropTypes.oneOf(['category', 'setup']).isRequired,
+        id: PropTypes.string.isRequired
+    }).isRequired,
+};
+
+export default HomePage;

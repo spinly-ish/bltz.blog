@@ -534,7 +534,7 @@ export function getCategories() {
 }
 
 /**
- * Categories list for Sidebar (fixed order)
+ * Categories list for navigation
  */
 export const categories = [
     { id: 'all', name: 'All Apps', icon: '🔥' },
@@ -543,3 +543,44 @@ export const categories = [
     { id: 'design', name: 'Design', icon: '🎨' },
     { id: 'vpn', name: 'VPN', icon: '🛡️' },
 ];
+
+/**
+ * Setups - curated app collections for specific use cases
+ * Apps can belong to multiple setups (many-to-many relationship)
+ */
+export const setups = [
+    {
+        id: 'product-manager',
+        name: 'Product Manager Kit',
+        icon: '📊',
+        description: 'Essential apps for product managers',
+        appIds: [1, 3, 4, 5, 6, 10] // Things 3, Obsidian, Notion Calendar, Spark, Paste, Figma
+    },
+    {
+        id: 'macos-newcomer',
+        name: 'macOS Newcomer Kit',
+        icon: '🍎',
+        description: 'Must-have apps for Windows switchers',
+        appIds: [6, 7, 8, 9] // Paste, Caramba Switcher, Rectangle, Bartender
+    }
+];
+
+/**
+ * Get apps by setup ID
+ * @param {string} setupId - Setup ID
+ * @returns {Array} - Array of apps in this setup
+ */
+export function getAppsBySetup(setupId) {
+    const setup = setups.find(s => s.id === setupId);
+    if (!setup) return [];
+    return appsData.filter(app => setup.appIds.includes(app.id));
+}
+
+/**
+ * Get setup by ID
+ * @param {string} setupId - Setup ID
+ * @returns {Object|undefined} - Setup object or undefined
+ */
+export function getSetupById(setupId) {
+    return setups.find(s => s.id === setupId);
+}
