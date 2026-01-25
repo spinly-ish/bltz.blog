@@ -17,14 +17,9 @@ function Header() {
                 {/* Логотип — ссылка на главную через React Router */}
                 <Link to="/" className="logo">
                     <span className="logo-icon">⚡</span>
-                    <span className="logo-text">bltz.blog</span>
+                    <span className="logo-text">bltz</span>
                 </Link>
                 
-                {/* Навигация — кнопки авторизации */}
-                <nav className="header-nav">
-                    <a href="#" className="btn btn-ghost">Sign In</a>
-                    <a href="#" className="btn btn-primary">Create Account</a>
-                </nav>
             </div>
         </header>
     );

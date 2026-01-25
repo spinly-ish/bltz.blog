@@ -138,12 +138,6 @@ img {
     background-clip: text;
 }
 
-.header-nav {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-md);
-}
-
 /* Buttons */
 .btn {
     display: inline-flex;
@@ -157,16 +151,6 @@ img {
     cursor: pointer;
     transition: all 0.2s ease;
     border: none;
-}
-
-.btn-ghost {
-    background: transparent;
-    color: var(--text-secondary);
-}
-
-.btn-ghost:hover {
-    color: var(--text-primary);
-    background: var(--bg-card);
 }
 
 .btn-primary {
@@ -740,10 +724,6 @@ img {
     }
     
     .logo-text {
-        display: none;
-    }
-    
-    .btn-ghost {
         display: none;
     }
     
