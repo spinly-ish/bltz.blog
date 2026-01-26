@@ -1,0 +1,11 @@
+# robots.txt for bltz.blog
+# https://bltz.blog
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://bltz.blog/sitemap.xml
+
+# Crawl-delay (optional, respected by some bots)
+Crawl-delay: 1
