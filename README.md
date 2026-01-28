@@ -6,3 +6,4 @@ iOS App Reviews & Recommendations — affiliate website for curated iOS apps.
 - Dropdown categories added
 - Minor scrolling problem fixed
 - Loop error fixed
+- Dark/light theme added
