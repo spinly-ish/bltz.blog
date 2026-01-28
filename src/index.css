@@ -3,25 +3,26 @@
    Base Styles (React Version)
    ============================================ */
 
-/* CSS Variables */
+/* CSS Variables - Dark Theme (Default) */
 :root {
     /* Colors - Dark theme inspired by modern app stores */
     --bg-primary: #0a0a0f;
     --bg-secondary: #12121a;
     --bg-card: #1a1a24;
     --bg-card-hover: #222230;
-    
+    --bg-header: rgba(10, 10, 15, 0.95);
+
     --text-primary: #ffffff;
     --text-secondary: #a0a0b0;
     --text-muted: #6b6b7b;
-    
+
     --accent-primary: #6366f1;
     --accent-secondary: #8b5cf6;
     --accent-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-    
+
     --border-color: #2a2a3a;
     --border-light: #1f1f2f;
-    
+
     /* Spacing */
     --spacing-xs: 4px;
     --spacing-sm: 8px;
@@ -30,18 +31,18 @@
     --spacing-xl: 32px;
     --spacing-2xl: 48px;
     --spacing-3xl: 64px;
-    
+
     /* Border Radius */
     --radius-sm: 6px;
     --radius-md: 12px;
     --radius-lg: 16px;
     --radius-xl: 24px;
-    
+
     /* Shadows */
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
     --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
     --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.5);
-    
+
     /* Typography */
     --font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --font-size-xs: 12px;
@@ -51,11 +52,43 @@
     --font-size-xl: 24px;
     --font-size-2xl: 32px;
     --font-size-3xl: 40px;
-    
+
     /* Layout */
     --header-height: 72px;
     --sidebar-width: 240px;
     --max-width: 1400px;
+
+    /* Transitions */
+    --transition-theme: 0.3s ease;
+}
+
+/* Light Theme */
+[data-theme="light"] {
+    --bg-primary: #f8f8fa;
+    --bg-secondary: #ffffff;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f5f5f8;
+    --bg-header: rgba(248, 248, 250, 0.95);
+
+    --text-primary: #1a1a1a;
+    --text-secondary: #555566;
+    --text-muted: #888899;
+
+    --border-color: #e0e0e8;
+    --border-light: #eaeaf0;
+
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+/* Add subtle shadow to cards in light theme */
+[data-theme="light"] .app-card {
+    box-shadow: var(--shadow-sm);
+}
+
+[data-theme="light"] .app-card:hover {
+    box-shadow: var(--shadow-md);
 }
 
 /* Reset & Base */
@@ -70,6 +103,10 @@
 html {
     font-size: 16px;
     scroll-behavior: smooth;
+}
+
+html, body {
+    transition: background-color var(--transition-theme), color var(--transition-theme);
 }
 
 body {
@@ -102,10 +139,11 @@ img {
     position: sticky;
     top: 0;
     z-index: 100;
-    background-color: rgba(10, 10, 15, 0.95);
+    background-color: var(--bg-header);
     backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border-color);
     height: var(--header-height);
+    transition: background-color var(--transition-theme), border-color var(--transition-theme);
 }
 
 .header-container {
@@ -115,6 +153,7 @@ img {
     height: 100%;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: var(--spacing-xl);
 }
 
@@ -122,6 +161,14 @@ img {
     display: flex;
     align-items: center;
     gap: var(--spacing-md);
+    flex: 1;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    flex-shrink: 0;
 }
 
 /* Search Field */
@@ -134,6 +181,7 @@ img {
     border: 1px solid var(--border-color);
     border-radius: var(--radius-md);
     min-width: 200px;
+    transition: background-color var(--transition-theme), border-color var(--transition-theme);
 }
 
 .search-icon {
@@ -240,6 +288,7 @@ img {
     box-shadow: var(--shadow-lg);
     z-index: 200;
     animation: dropdownFadeIn 0.15s ease;
+    transition: background-color var(--transition-theme), border-color var(--transition-theme);
 }
 
 @keyframes dropdownFadeIn {
@@ -339,11 +388,22 @@ img {
     color: var(--bg-primary);
     padding: var(--spacing-md) var(--spacing-xl);
     font-size: var(--font-size-md);
+    transition: all 0.2s ease, background-color var(--transition-theme), color var(--transition-theme);
 }
 
 .btn-appstore:hover {
-    background: #f0f0f0;
+    opacity: 0.85;
     transform: translateY(-2px);
+}
+
+/* Light theme: invert App Store button */
+[data-theme="light"] .btn-appstore {
+    background: #1a1a1a;
+    color: #ffffff;
+}
+
+[data-theme="light"] .btn-appstore:hover {
+    background: #333333;
 }
 
 .btn-appstore .apple-icon {
@@ -511,7 +571,7 @@ img {
     background: var(--bg-card);
     border-radius: var(--radius-lg);
     border: 1px solid var(--border-color);
-    transition: all 0.2s ease;
+    transition: all 0.2s ease, background-color var(--transition-theme), border-color var(--transition-theme);
     cursor: pointer;
 }
 
@@ -782,6 +842,12 @@ img {
     padding: var(--spacing-md);
     background: var(--bg-card);
     border-radius: var(--radius-md);
+    transition: background-color var(--transition-theme);
+}
+
+/* Add border in light theme */
+[data-theme="light"] .info-item {
+    border: 1px solid var(--border-color);
 }
 
 .info-label {
@@ -813,6 +879,12 @@ img {
     padding: var(--spacing-3xl);
     text-align: center;
     border: 1px solid var(--border-color);
+    transition: background-color var(--transition-theme), border-color var(--transition-theme);
+}
+
+/* Add shadow in light theme */
+[data-theme="light"] .cta-section {
+    box-shadow: var(--shadow-md);
 }
 
 .cta-content h2 {
@@ -836,6 +908,7 @@ img {
     border-top: 1px solid var(--border-color);
     padding: var(--spacing-xl) 0;
     margin-top: var(--spacing-3xl);
+    transition: background-color var(--transition-theme), border-color var(--transition-theme);
 }
 
 .footer-container {
@@ -920,6 +993,10 @@ img {
         gap: var(--spacing-xs);
     }
 
+    .header-right {
+        gap: var(--spacing-sm);
+    }
+
     .search-field {
         display: none;
     }
@@ -935,6 +1012,16 @@ img {
 
     .nav-dropdown-item {
         padding: var(--spacing-sm);
+    }
+
+    .theme-toggle {
+        width: 36px;
+        height: 36px;
+    }
+
+    .theme-toggle svg {
+        width: 18px;
+        height: 18px;
     }
 
     .app-grid {
@@ -990,6 +1077,55 @@ img {
     .btn-appstore {
         width: 100%;
     }
+}
+
+/* ============================================
+   Theme Toggle
+   ============================================ */
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+    color: var(--text-primary);
+    border-color: var(--text-muted);
+    background: var(--bg-card);
+}
+
+.theme-toggle svg {
+    width: 20px;
+    height: 20px;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Sun icon - shown in dark mode (to switch to light) */
+.theme-toggle .icon-sun {
+    display: block;
+}
+
+.theme-toggle .icon-moon {
+    display: none;
+}
+
+/* Moon icon - shown in light mode (to switch to dark) */
+[data-theme="light"] .theme-toggle .icon-sun {
+    display: none;
+}
+
+[data-theme="light"] .theme-toggle .icon-moon {
+    display: block;
 }
 
 /* ============================================

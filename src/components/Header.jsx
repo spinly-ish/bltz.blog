@@ -1,13 +1,14 @@
 /**
  * Header.jsx — Site header with navigation
  *
- * Contains logo, search field, and dropdown navigation.
+ * Contains logo, search field, dropdown navigation, and theme toggle.
  * Navigation is only shown on the home page.
  */
 
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import HeaderNav from './HeaderNav'
+import ThemeToggle from './ThemeToggle'
 
 function Header({ showNav = false, activeFilter, onFilterChange }) {
     return (
@@ -47,6 +48,11 @@ function Header({ showNav = false, activeFilter, onFilterChange }) {
                         )}
                     </div>
                 )}
+
+                {/* Right section with theme toggle */}
+                <div className="header-right">
+                    <ThemeToggle />
+                </div>
             </div>
         </header>
     );
