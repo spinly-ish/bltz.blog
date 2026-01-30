@@ -10,7 +10,7 @@ import PropTypes from 'prop-types'
 import HeaderNav from './HeaderNav'
 import ThemeToggle from './ThemeToggle'
 
-function Header({ showNav = false, activeFilter, onFilterChange }) {
+function Header({ showNav = false, activeFilter, onFilterChange, searchQuery = '', onSearchChange }) {
     return (
         <header className="header">
             <div className="header-container">
@@ -23,7 +23,7 @@ function Header({ showNav = false, activeFilter, onFilterChange }) {
                 {/* Search and Navigation group */}
                 {showNav && (
                     <div className="header-center">
-                        {/* Search field — placeholder for future */}
+                        {/* Search field */}
                         <div className="search-field">
                             <span className="search-icon">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -35,7 +35,8 @@ function Header({ showNav = false, activeFilter, onFilterChange }) {
                                 type="text"
                                 className="search-input"
                                 placeholder="Search apps..."
-                                disabled
+                                value={searchQuery}
+                                onChange={(e) => onSearchChange?.(e.target.value)}
                             />
                         </div>
 
@@ -65,6 +66,8 @@ Header.propTypes = {
         id: PropTypes.string.isRequired
     }),
     onFilterChange: PropTypes.func,
+    searchQuery: PropTypes.string,
+    onSearchChange: PropTypes.func,
 };
 
 export default Header;

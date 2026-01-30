@@ -21,6 +21,9 @@ function App() {
         id: 'all'
     });
 
+    // Search query state
+    const [searchQuery, setSearchQuery] = useState('');
+
     return (
         <>
             {/* Header — site header with navigation */}
@@ -28,6 +31,8 @@ function App() {
                 showNav={true}
                 activeFilter={activeFilter}
                 onFilterChange={setActiveFilter}
+                searchQuery={searchQuery}
+                onSearchChange={setSearchQuery}
             />
 
             {/* Routes — route container */}
@@ -35,7 +40,7 @@ function App() {
                 {/* Home page — app list */}
                 <Route
                     path="/"
-                    element={<HomePage activeFilter={activeFilter} />}
+                    element={<HomePage activeFilter={activeFilter} searchQuery={searchQuery} />}
                 />
 
                 {/* App detail page */}

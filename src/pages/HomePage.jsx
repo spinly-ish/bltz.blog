@@ -10,21 +10,45 @@
 
 import PropTypes from 'prop-types'
 import AppGrid from '../components/AppGrid'
-import { getAppsByCategory, getAppsBySetup, getSetupById, categories } from '../data/appsData'
+import { getAppsByCategory, getAppsBySetup, getSetupById, categories, appsData } from '../data/appsData'
 
-function HomePage({ activeFilter }) {
-    // Get filtered apps based on filter type
+function HomePage({ activeFilter, searchQuery = '' }) {
+    // Get filtered apps based on filter type and search query
     const getFilteredApps = () => {
-        if (activeFilter.type === 'category') {
-            return getAppsByCategory(activeFilter.id);
+        let apps;
+
+        // If searching, search across all apps
+        if (searchQuery.trim()) {
+            apps = appsData;
+        } else if (activeFilter.type === 'category') {
+            apps = getAppsByCategory(activeFilter.id);
         } else if (activeFilter.type === 'setup') {
-            return getAppsBySetup(activeFilter.id);
+            apps = getAppsBySetup(activeFilter.id);
+        } else {
+            apps = [];
         }
-        return [];
+
+        // Apply search filter
+        if (searchQuery.trim()) {
+            const query = searchQuery.toLowerCase().trim();
+            apps = apps.filter(app =>
+                app.name.toLowerCase().includes(query) ||
+                app.tagline.toLowerCase().includes(query) ||
+                app.developer.toLowerCase().includes(query) ||
+                app.categoryDisplay.toLowerCase().includes(query)
+            );
+        }
+
+        return apps;
     };
+
+    const filteredApps = getFilteredApps();
 
     // Get title based on current filter
     const getTitle = () => {
+        if (searchQuery.trim()) {
+            return 'Search Results';
+        }
         if (activeFilter.type === 'category') {
             const category = categories.find(c => c.id === activeFilter.id);
             return category ? category.name : 'All Apps';
@@ -37,14 +61,18 @@ function HomePage({ activeFilter }) {
 
     // Get subtitle based on current filter
     const getSubtitle = () => {
+        if (searchQuery.trim()) {
+            const count = filteredApps.length;
+            return count === 0
+                ? 'No apps found'
+                : `Found ${count} app${count !== 1 ? 's' : ''} for "${searchQuery}"`;
+        }
         if (activeFilter.type === 'setup') {
             const setup = getSetupById(activeFilter.id);
             return setup ? setup.description : 'Curated app collection';
         }
         return 'Curated collection of the best macOS apps';
     };
-
-    const filteredApps = getFilteredApps();
 
     return (
         <main className="main">
@@ -69,6 +97,7 @@ HomePage.propTypes = {
         type: PropTypes.oneOf(['category', 'setup']).isRequired,
         id: PropTypes.string.isRequired
     }).isRequired,
+    searchQuery: PropTypes.string,
 };
 
 export default HomePage;

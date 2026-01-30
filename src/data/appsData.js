@@ -492,6 +492,160 @@ export const appsData = [
         ],
         whyWeLoveIt: "Surfshark delivers premium features at a fraction of the price of competitors. Unlimited device connections make it perfect for households. The Camouflage Mode is excellent for users in countries with VPN restrictions.",
         whoItsFor: "Budget-conscious users who don't want to compromise on features. Perfect for families and users in restrictive countries."
+    },
+
+    // ============================================
+    // VOICE DICTATION APPS
+    // ============================================
+    {
+        id: 16,
+        name: "Wispr Flow",
+        tagline: "AI-powered voice typing that works everywhere",
+        category: "voice",
+        categoryDisplay: "Voice Dictation",
+        rating: 4.8,
+        reviewsCount: "45K",
+        iconImage: "/assets/icons/wisprflow.png",
+        appStoreUrl: "https://apps.apple.com/app/wispr-flow-voice-to-text/id6462950860",
+        websiteUrl: "https://wisprflow.ai/",
+        price: "Free (2K words/week) / $12/month Pro",
+        developer: "Wispr AI, Inc.",
+        size: "85.2 MB",
+        compatibility: "macOS 12.0+, Windows 10+, iOS 16.0+",
+        languages: "English, Spanish, French, German, Portuguese, Italian, Japanese, Chinese, and 90+ more",
+        ageRating: "4+",
+        description: `<p>Wispr Flow is the leading AI voice dictation app that works universally across all your apps. Just talk, and Flow types for you — cleaning up your speech in real-time, removing filler words, and adding proper punctuation.</p>
+        <p>The AI understands context and adjusts tone based on the app you're using. Write emails professionally, message friends casually, or code with technical precision — all by voice.</p>`,
+        features: [
+            { title: "97%+ Accuracy", desc: "Industry-leading transcription accuracy with AI auto-editing." },
+            { title: "Works Everywhere", desc: "Use in any app — emails, Slack, docs, even code editors." },
+            { title: "Whisper Mode", desc: "Speak quietly in public spaces — Flow still understands you." },
+            { title: "Command Mode", desc: "Highlight text and give voice commands to rewrite or format." },
+            { title: "Context-Aware", desc: "Adjusts tone and style based on the app you're using." },
+            { title: "90+ Languages", desc: "Dictate in over 90 languages with automatic detection." }
+        ],
+        whyWeLoveIt: "Wispr Flow genuinely replaces your keyboard for most typing tasks. The AI editing is remarkably good at understanding what you meant to say, not just what you said. At 170+ words per minute, it's 3-4x faster than typing.",
+        whoItsFor: "Anyone who types a lot — writers, developers, professionals. Especially valuable for people with RSI or those who think faster than they type."
+    },
+    {
+        id: 17,
+        name: "Superwhisper",
+        tagline: "Private AI dictation that stays on your Mac",
+        category: "voice",
+        categoryDisplay: "Voice Dictation",
+        rating: 4.9,
+        reviewsCount: "12K",
+        iconImage: "/assets/icons/superwhisper.jpg",
+        appStoreUrl: null,
+        websiteUrl: "https://superwhisper.com/",
+        price: "$10/month or $99/year",
+        developer: "Superwhisper",
+        size: "1.2 GB (includes AI models)",
+        compatibility: "macOS 13.0+ (Apple Silicon recommended)",
+        languages: "English, Spanish, French, German, Italian, Portuguese, Japanese, Chinese, and 90+ more",
+        ageRating: "4+",
+        description: `<p>Superwhisper runs OpenAI's Whisper model entirely on your Mac — no cloud, no internet required, complete privacy. Your voice never leaves your device.</p>
+        <p>The standout feature is custom "modes" — create prompts for different tasks like formal emails, casual messages, or meeting notes. Each mode transforms your speech differently.</p>`,
+        features: [
+            { title: "100% Local", desc: "All processing happens on-device. Your voice data never leaves your Mac." },
+            { title: "Custom Modes", desc: "Create prompts for different contexts — formal, casual, technical, etc." },
+            { title: "Offline Ready", desc: "Works without internet once models are downloaded." },
+            { title: "Apple Silicon Optimized", desc: "Blazing fast on M1/M2/M3 Macs with Neural Engine." },
+            { title: "Global Hotkey", desc: "Start dictating from any app with a keyboard shortcut." },
+            { title: "99+ Languages", desc: "Whisper supports nearly 100 languages." }
+        ],
+        whyWeLoveIt: "For anyone handling sensitive information — legal, medical, financial — Superwhisper is the only choice. Zero data leaves your Mac. The custom modes feature is brilliant for adapting output to different contexts.",
+        whoItsFor: "Privacy-conscious professionals, healthcare workers, lawyers, journalists, or anyone who can't risk their voice data in the cloud."
+    },
+    {
+        id: 18,
+        name: "MacWhisper",
+        tagline: "Transcribe audio files with Whisper AI locally",
+        category: "voice",
+        categoryDisplay: "Voice Dictation",
+        rating: 4.7,
+        reviewsCount: "8.5K",
+        iconImage: "/assets/icons/macwhisper.png",
+        appStoreUrl: null,
+        websiteUrl: "https://goodsnooze.gumroad.com/l/macwhisper",
+        price: "Free / $29 Pro (one-time)",
+        developer: "Good Snooze",
+        size: "150 MB - 3 GB (depends on model)",
+        compatibility: "macOS 13.0+ (Apple Silicon)",
+        languages: "99 languages supported by Whisper",
+        ageRating: "4+",
+        description: `<p>MacWhisper brings OpenAI's Whisper speech recognition to your Mac as a native app. Drag and drop audio or video files to get accurate transcriptions — all processed locally on your device.</p>
+        <p>Perfect for transcribing meetings, interviews, podcasts, or any recorded audio. The Pro version adds real-time dictation and advanced export options.</p>`,
+        features: [
+            { title: "Local Processing", desc: "All transcription happens on your Mac — completely offline capable." },
+            { title: "Drag & Drop", desc: "Simply drop audio/video files to transcribe." },
+            { title: "Multiple Formats", desc: "Supports MP3, WAV, M4A, MP4, MOV, and more." },
+            { title: "Timestamps", desc: "Get word-level timestamps for easy navigation." },
+            { title: "Export Options", desc: "Export as TXT, SRT, VTT, CSV, or JSON." },
+            { title: "Batch Processing", desc: "Transcribe multiple files at once (Pro)." }
+        ],
+        whyWeLoveIt: "MacWhisper is the simplest way to transcribe audio on Mac. No accounts, no subscriptions for basic use, no uploading files anywhere. The free version is genuinely useful, and the Pro upgrade is a one-time purchase.",
+        whoItsFor: "Journalists, podcasters, researchers, students — anyone who needs to transcribe recordings. Great for meeting notes and interview transcription."
+    },
+    {
+        id: 19,
+        name: "VoiceInk",
+        tagline: "Free, open-source voice typing for Mac",
+        category: "voice",
+        categoryDisplay: "Voice Dictation",
+        rating: 4.6,
+        reviewsCount: "5.2K",
+        iconImage: "/assets/icons/voiceink.png",
+        appStoreUrl: null,
+        websiteUrl: "https://github.com/VoiceInk/VoiceInk",
+        price: "Free (Open Source)",
+        developer: "VoiceInk Community",
+        size: "500 MB - 2 GB (with models)",
+        compatibility: "macOS 12.0+",
+        languages: "100+ languages via Whisper models",
+        ageRating: "4+",
+        description: `<p>VoiceInk is a free, open-source voice-to-text application for macOS that leverages OpenAI's Whisper models for accurate transcription. All processing happens locally — your voice data stays on your device.</p>
+        <p>As an open-source project, VoiceInk is transparent, customizable, and community-driven. No subscriptions, no accounts, no data collection.</p>`,
+        features: [
+            { title: "100% Free", desc: "Completely free and open-source. No hidden costs or subscriptions." },
+            { title: "Privacy First", desc: "All processing is local. No internet required after model download." },
+            { title: "100+ Languages", desc: "Supports all languages available in Whisper models." },
+            { title: "System-wide", desc: "Works across all applications via system integration." },
+            { title: "Customizable", desc: "Open-source means you can modify and extend it." },
+            { title: "Active Community", desc: "Regular updates and community-driven improvements." }
+        ],
+        whyWeLoveIt: "VoiceInk proves that excellent voice typing doesn't have to cost anything. It's completely free, respects your privacy, and the community keeps improving it. Perfect for users who value open-source software.",
+        whoItsFor: "Open-source enthusiasts, privacy advocates, developers, and anyone who wants powerful voice typing without paying for subscriptions."
+    },
+    {
+        id: 20,
+        name: "Voicy",
+        tagline: "Fast, accurate voice typing across all apps",
+        category: "voice",
+        categoryDisplay: "Voice Dictation",
+        rating: 4.7,
+        reviewsCount: "9.8K",
+        iconImage: "/assets/icons/voicy.png",
+        appStoreUrl: null,
+        websiteUrl: "https://usevoicy.com/",
+        price: "$8.49/month or $220 lifetime",
+        developer: "Voicy",
+        size: "95 MB",
+        compatibility: "macOS 12.0+, Windows 10+",
+        languages: "50+ languages with 99%+ accuracy",
+        ageRating: "4+",
+        description: `<p>Voicy delivers professional-grade voice typing with over 99% accuracy in 50+ languages. It works across all your applications and features smart punctuation, formatting, and voice commands.</p>
+        <p>The app offers both cloud and local processing options, letting you choose between maximum speed or complete privacy.</p>`,
+        features: [
+            { title: "99%+ Accuracy", desc: "Industry-leading accuracy across 50+ languages." },
+            { title: "Hybrid Processing", desc: "Choose between cloud (faster) or local (private) processing." },
+            { title: "Voice Commands", desc: "Control your Mac with voice — open apps, navigate, format text." },
+            { title: "Custom Vocabulary", desc: "Add technical terms, names, and jargon for better recognition." },
+            { title: "Lifetime Option", desc: "One-time payment option available — no ongoing subscription." },
+            { title: "Cross-Platform", desc: "Works on both macOS and Windows." }
+        ],
+        whyWeLoveIt: "Voicy hits the sweet spot between features and price. The lifetime license option is great for users who hate subscriptions. The hybrid processing model lets you choose speed or privacy based on the task.",
+        whoItsFor: "Professionals who want reliable voice typing without the premium price. Great for bilingual users with its excellent multi-language support."
     }
 ];
 
@@ -542,6 +696,7 @@ export const categories = [
     { id: 'utilities', name: 'Utilities', icon: '🔧' },
     { id: 'design', name: 'Design', icon: '🎨' },
     { id: 'vpn', name: 'VPN', icon: '🛡️' },
+    { id: 'voice', name: 'Voice Dictation', icon: '🎙️' },
 ];
 
 /**
