@@ -181,6 +181,96 @@ export const appsData = [
         whyWeLoveIt: "Spark makes email manageable again. Smart Inbox actually works and helps you not drown in the email flood.",
         whoItsFor: "For everyone who receives a lot of email and wants to manage it more effectively. Especially useful for teams."
     },
+    {
+        id: 21,
+        name: "OmniFocus 4",
+        tagline: "The most powerful GTD task manager",
+        category: "productivity",
+        categoryDisplay: "Productivity",
+        rating: 4.8,
+        reviewsCount: "15K",
+        iconImage: "/assets/icons/omnifocus.jpg",
+        appStoreUrl: "https://apps.apple.com/app/omnifocus-4/id1542143627",
+        websiteUrl: "https://www.omnigroup.com/omnifocus",
+        price: "$9.99/month or $149.99 (one-time)",
+        developer: "The Omni Group",
+        size: "68.4 MB",
+        compatibility: "macOS 13.0+, iOS 16.0+",
+        languages: "English, German, French, Spanish, Japanese, Chinese",
+        ageRating: "4+",
+        description: `<p>OmniFocus 4 is the gold standard for GTD (Getting Things Done) implementation. This powerhouse task manager offers unmatched flexibility and depth for organizing complex projects and tasks.</p>
+        <p>With custom perspectives, powerful review mode, and seamless Apple ecosystem integration, OmniFocus helps you maintain complete control over your commitments and projects.</p>`,
+        features: [
+            { title: "Custom Perspectives", desc: "Create personalized views to see exactly what you need, when you need it." },
+            { title: "Review Mode", desc: "Built-in weekly review feature to keep your system current and trusted." },
+            { title: "Forecast View", desc: "See tasks and calendar events together for better planning." },
+            { title: "Tags & Contexts", desc: "Organize tasks by location, tool, energy level, or any criteria." },
+            { title: "Defer Dates", desc: "Hide tasks until you can actually work on them." },
+            { title: "Shortcuts & Siri", desc: "Deep integration with iOS automation and voice control." }
+        ],
+        whyWeLoveIt: "OmniFocus is for serious GTD practitioners who need maximum flexibility. The review feature is exceptional — it actually makes weekly reviews enjoyable. No other task manager matches its depth.",
+        whoItsFor: "GTD practitioners managing complex projects and multiple areas of responsibility. Ideal for professionals who need a trusted system they can customize completely."
+    },
+    {
+        id: 22,
+        name: "Nirvana",
+        tagline: "Pure GTD methodology in a clean interface",
+        category: "productivity",
+        categoryDisplay: "Productivity",
+        rating: 4.6,
+        reviewsCount: "8K",
+        iconImage: "/assets/icons/nirvana.jpg",
+        appStoreUrl: "https://apps.apple.com/app/nirvana-gtd/id455751886",
+        websiteUrl: "https://nirvanahq.com/",
+        price: "Free / $5/month Pro",
+        developer: "Nirvana Labs",
+        size: "12.5 MB",
+        compatibility: "iOS 12.0+, Web",
+        languages: "English",
+        ageRating: "4+",
+        description: `<p>Nirvana is built from the ground up around the GTD methodology. Unlike other task managers that adapt to GTD, Nirvana was designed specifically to implement David Allen's system faithfully.</p>
+        <p>With dedicated lists for Next Actions, Waiting For, Someday/Maybe, and a Focus view for today's priorities, Nirvana keeps you in the GTD flow without unnecessary complexity.</p>`,
+        features: [
+            { title: "True GTD Design", desc: "Built specifically for GTD — not adapted, but designed for it." },
+            { title: "Focus View", desc: "Star important tasks to see them in a dedicated Focus list." },
+            { title: "Next Actions", desc: "Clearly defined next actions for each project." },
+            { title: "Waiting For", desc: "Track delegated tasks and things you're waiting on." },
+            { title: "Someday/Maybe", desc: "Capture ideas without cluttering your active lists." },
+            { title: "Weekly Review", desc: "Guided review process to maintain your system." }
+        ],
+        whyWeLoveIt: "Nirvana is GTD done right. No bloat, no unnecessary features — just a clean implementation of the methodology. The Focus view is brilliant for selecting what to work on today.",
+        whoItsFor: "GTD purists who want a system that follows the methodology without extra complexity. Great for those new to GTD who want proper guidance."
+    },
+    {
+        id: 23,
+        name: "Todoist",
+        tagline: "Simple yet powerful task management for everyone",
+        category: "productivity",
+        categoryDisplay: "Productivity",
+        rating: 4.8,
+        reviewsCount: "580K",
+        iconImage: "/assets/icons/todoist.png",
+        appStoreUrl: "https://apps.apple.com/app/todoist-to-do-list-planner/id585829637",
+        websiteUrl: "https://todoist.com/",
+        price: "Free / $4/month Pro",
+        developer: "Doist Inc.",
+        size: "98.2 MB",
+        compatibility: "macOS 10.15+, iOS 14.0+, Windows, Android, Web",
+        languages: "English, Russian, German, French, Spanish, Portuguese, Japanese, Chinese, and 10+ more",
+        ageRating: "4+",
+        description: `<p>Todoist is the most popular task manager in the world for a reason. It strikes the perfect balance between simplicity and power, making it accessible to beginners while offering enough features for power users.</p>
+        <p>With natural language input, powerful filters, and integrations with 80+ apps, Todoist fits seamlessly into any workflow. The generous free tier makes it easy to get started.</p>`,
+        features: [
+            { title: "Natural Language", desc: "Type 'call mom tomorrow at 3pm' and Todoist understands." },
+            { title: "Projects & Sections", desc: "Organize tasks into projects with sections and sub-tasks." },
+            { title: "Labels & Filters", desc: "Create custom views with powerful filter queries." },
+            { title: "Karma System", desc: "Gamification to build and maintain productivity habits." },
+            { title: "80+ Integrations", desc: "Connect with Gmail, Slack, Calendar, and more." },
+            { title: "Cross-Platform", desc: "Works everywhere — Mac, iOS, Windows, Android, Web." }
+        ],
+        whyWeLoveIt: "Todoist just works. The natural language input is the best in class, and the free tier is genuinely useful. It's the easiest recommendation for anyone starting with task management.",
+        whoItsFor: "Everyone — from students to executives. Perfect for GTD beginners, teams, and anyone who wants reliable task management without complexity."
+    },
 
     // ============================================
     // UTILITIES APPS

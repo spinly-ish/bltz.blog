@@ -8,6 +8,7 @@ docs/
 # IDE and Editor files
 .idea/
 .vscode/
+.claude/
 *.swp
 *.swo
 *~
