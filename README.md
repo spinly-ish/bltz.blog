@@ -8,3 +8,4 @@ iOS App Reviews & Recommendations — affiliate website for curated iOS apps.
 - Loop error fixed
 - Dark/light theme added
 - Search added
+- New apps added
