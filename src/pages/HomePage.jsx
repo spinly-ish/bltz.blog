@@ -74,9 +74,30 @@ function HomePage({ activeFilter, searchQuery = '' }) {
         return 'Curated collection of the best macOS apps';
     };
 
+    const showHero = activeFilter.id === 'all' && activeFilter.type === 'category' && !searchQuery.trim();
+
     return (
         <main className="main">
             <div className="main-container main-container--no-sidebar">
+                {/* Hero Section — only on main "All Apps" view */}
+                {showHero && (
+                    <section className="hero">
+                        <div className="hero-content">
+                            <h1 className="hero-title">
+                                Find the right app in 30 seconds. No endless comparisons.
+                            </h1>
+                            <p className="hero-subtitle">
+                                Get a ready answer — not another list of endless options. One best pick + why + a short demo.
+                            </p>
+                        </div>
+                        <div className="hero-video">
+                            <div className="hero-video-placeholder">
+                                <span className="hero-video-icon">▶</span>
+                            </div>
+                        </div>
+                    </section>
+                )}
+
                 {/* Content — app cards grid */}
                 <section className="content">
                     <div className="content-header">
