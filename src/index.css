@@ -553,6 +553,26 @@ img {
     color: var(--text-primary);
 }
 
+.hero-typed {
+    color: var(--accent-primary);
+}
+
+.hero-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 0.9em;
+    background: var(--accent-primary);
+    margin-left: 2px;
+    vertical-align: baseline;
+    position: relative;
+    top: 0.1em;
+    animation: blink 0.7s step-end infinite;
+}
+
+@keyframes blink {
+    50% { opacity: 0; }
+}
+
 .hero-subtitle {
     font-size: var(--font-size-lg);
     line-height: 1.6;

@@ -10,7 +10,10 @@
 
 import PropTypes from 'prop-types'
 import AppGrid from '../components/AppGrid'
+import useTypewriter from '../hooks/useTypewriter'
 import { getAppsByCategory, getAppsBySetup, getSetupById, categories, appsData } from '../data/appsData'
+
+const HERO_WORDS = ['app', 'tool', 'workflow'];
 
 function HomePage({ activeFilter, searchQuery = '' }) {
     // Get filtered apps based on filter type and search query
@@ -75,6 +78,7 @@ function HomePage({ activeFilter, searchQuery = '' }) {
     };
 
     const showHero = activeFilter.id === 'all' && activeFilter.type === 'category' && !searchQuery.trim();
+    const typedWord = useTypewriter(HERO_WORDS);
 
     return (
         <main className="main">
@@ -84,7 +88,7 @@ function HomePage({ activeFilter, searchQuery = '' }) {
                     <section className="hero">
                         <div className="hero-content">
                             <h1 className="hero-title">
-                                Find the right app in 30 seconds. No endless comparisons.
+                                Find the right <span className="hero-typed">{typedWord}</span><span className="hero-cursor" /> in 30&nbsp;seconds.
                             </h1>
                             <p className="hero-subtitle">
                                 Get a ready answer — not another list of endless options. One best pick + why + a short demo.
