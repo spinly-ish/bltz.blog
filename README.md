@@ -9,3 +9,4 @@ iOS App Reviews & Recommendations — affiliate website for curated iOS apps.
 - Dark/light theme added
 - Search added
 - New apps added
+- Index updated for Hero section
