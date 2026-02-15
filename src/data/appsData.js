@@ -29,14 +29,14 @@
 
 export const appsData = [
     // ============================================
-    // PRODUCTIVITY APPS
+    // TASK MANAGEMENT APPS
     // ============================================
     {
         id: 1,
         name: "Things 3",
         tagline: "The best task manager for macOS and iOS",
-        category: "productivity",
-        categoryDisplay: "Productivity",
+        category: "task-management",
+        categoryDisplay: "Task Management",
         rating: 4.8,
         reviewsCount: "25K",
         iconImage: "/assets/icons/things3.png",
@@ -65,8 +65,8 @@ export const appsData = [
         id: 3,
         name: "Obsidian",
         tagline: "Personal knowledge base on Markdown",
-        category: "productivity",
-        categoryDisplay: "Productivity",
+        category: "task-management",
+        categoryDisplay: "Task Management",
         rating: 4.9,
         reviewsCount: "18K",
         iconImage: "/assets/icons/obsidian.jpg",
@@ -95,8 +95,8 @@ export const appsData = [
         id: 22,
         name: "Nirvana",
         tagline: "Pure GTD methodology in a clean interface",
-        category: "productivity",
-        categoryDisplay: "Productivity",
+        category: "task-management",
+        categoryDisplay: "Task Management",
         rating: 4.6,
         reviewsCount: "8K",
         iconImage: "/assets/icons/nirvana.jpg",
@@ -123,14 +123,14 @@ export const appsData = [
     },
 
     // ============================================
-    // UTILITIES APPS
+    // TYPING & CLIPBOARD APPS
     // ============================================
     {
         id: 6,
         name: "Paste",
         tagline: "Clipboard manager",
-        category: "utilities",
-        categoryDisplay: "Utilities",
+        category: "typing-clipboard",
+        categoryDisplay: "Typing & Clipboard",
         rating: 4.7,
         reviewsCount: "12K",
         iconImage: "/assets/icons/paste.jpg",
@@ -155,12 +155,15 @@ export const appsData = [
         whyWeLoveIt: "Paste turns the clipboard into a powerful tool. Once you get used to it, you can't work without it.",
         whoItsFor: "For everyone who frequently copies and pastes: designers, developers, writers, managers."
     },
+    // ============================================
+    // SYSTEM TOOLS
+    // ============================================
     {
         id: 9,
         name: "Bartender",
         tagline: "Menu bar organization",
-        category: "utilities",
-        categoryDisplay: "Utilities",
+        category: "system-tools",
+        categoryDisplay: "System Tools",
         rating: 4.6,
         reviewsCount: "8.7K",
         iconImage: "/assets/icons/bartender.svg",
@@ -310,15 +313,12 @@ export const appsData = [
         whoItsFor: "Budget-conscious users who don't want to compromise on features. Perfect for families and users in restrictive countries."
     },
 
-    // ============================================
-    // VOICE DICTATION APPS
-    // ============================================
     {
         id: 16,
         name: "Wispr Flow",
         tagline: "AI-powered voice typing that works everywhere",
-        category: "voice",
-        categoryDisplay: "Voice Dictation",
+        category: "typing-clipboard",
+        categoryDisplay: "Typing & Clipboard",
         rating: 4.8,
         reviewsCount: "45K",
         iconImage: "/assets/icons/wisprflow.png",
@@ -388,10 +388,10 @@ export function getCategories() {
  */
 export const categories = [
     { id: 'all', name: 'All Apps', icon: '🔥' },
-    { id: 'productivity', name: 'Productivity', icon: '⚡' },
-    { id: 'utilities', name: 'Utilities', icon: '🔧' },
     { id: 'vpn', name: 'VPN', icon: '🛡️' },
-    { id: 'voice', name: 'Voice Dictation', icon: '🎙️' },
+    { id: 'task-management', name: 'Task Management', icon: '⚡' },
+    { id: 'typing-clipboard', name: 'Typing & Clipboard', icon: '⌨️' },
+    { id: 'system-tools', name: 'System Tools', icon: '🔧' },
 ];
 
 /**
@@ -404,7 +404,7 @@ export const setups = [
         name: 'macOS Newcomer Kit',
         icon: '🍎',
         description: 'Must-have apps for Windows switchers',
-        appIds: [6, 9] // Paste, Bartender
+        appIds: [6, 9, 16, 11, 1] // Paste, Bartender, Wispr Flow, ExpressVPN, Things 3
     }
 ];
 

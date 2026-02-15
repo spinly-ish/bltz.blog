@@ -5,17 +5,26 @@
  * Navigation is only shown on the home page.
  */
 
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import HeaderNav from './HeaderNav'
 import ThemeToggle from './ThemeToggle'
 
 function Header({ showNav = false, activeFilter, onFilterChange, searchQuery = '', onSearchChange }) {
+    const navigate = useNavigate();
+
+    const handleLogoClick = (e) => {
+        e.preventDefault();
+        onFilterChange?.({ type: 'category', id: 'all' });
+        onSearchChange?.('');
+        navigate('/');
+    };
+
     return (
         <header className="header">
             <div className="header-container">
-                {/* Logo — link to home via React Router */}
-                <Link to="/" className="logo">
+                {/* Logo — link to home, resets filters */}
+                <Link to="/" className="logo" onClick={handleLogoClick}>
                     <span className="logo-icon">⚡</span>
                     <span className="logo-text">bltz</span>
                 </Link>
