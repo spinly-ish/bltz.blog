@@ -62,36 +62,6 @@ export const appsData = [
         whoItsFor: "For those who appreciate quality design and want to organize tasks using GTD methodology without unnecessary complexity."
     },
     {
-        id: 2,
-        name: "Bear",
-        tagline: "Beautiful Markdown notes",
-        category: "productivity",
-        categoryDisplay: "Productivity",
-        rating: 4.7,
-        reviewsCount: "42K",
-        iconImage: "/assets/icons/bear.png",
-        appStoreUrl: "https://apps.apple.com/app/bear/id1091189122",
-        websiteUrl: "https://bear.app/",
-        price: "Free with Bear Pro subscription",
-        developer: "Shiny Frog",
-        size: "45.8 MB",
-        compatibility: "macOS 11.0+, iOS 15.0+",
-        languages: "English, Italian, German, French, Spanish, Japanese, Chinese",
-        ageRating: "4+",
-        description: `<p>Bear is a note-taking app with Markdown support that combines simplicity and power. Perfect for writing, taking notes, creating lists, and even coding.</p>
-        <p>The unique tagging system replaces traditional folders and allows flexible note organization. Nested tags support provides even more possibilities.</p>`,
-        features: [
-            { title: "Markdown Support", desc: "Full Markdown support with live preview and custom syntax." },
-            { title: "Tag System", desc: "Organize notes with tags instead of folders — a more flexible approach." },
-            { title: "Beautiful Themes", desc: "Many built-in themes including dark variants." },
-            { title: "Export Options", desc: "Export to PDF, HTML, DOCX, MD, and other formats." },
-            { title: "Wiki Links", desc: "Link notes together using [[wiki links]]." },
-            { title: "Focus Mode", desc: "Focus mode for distraction-free writing." }
-        ],
-        whyWeLoveIt: "Bear found the perfect balance between simplicity and functionality. Writing in it is a pleasure thanks to excellent typography and a thoughtful editor.",
-        whoItsFor: "For writers, developers, students, and anyone who appreciates a beautiful and functional note-taking tool."
-    },
-    {
         id: 3,
         name: "Obsidian",
         tagline: "Personal knowledge base on Markdown",
@@ -122,96 +92,6 @@ export const appsData = [
         whoItsFor: "For researchers, writers, developers, and anyone who wants to build a connected knowledge system."
     },
     {
-        id: 4,
-        name: "Notion Calendar",
-        tagline: "Smart calendar for planning",
-        category: "productivity",
-        categoryDisplay: "Productivity",
-        rating: 4.6,
-        reviewsCount: "8.5K",
-        iconImage: "/assets/icons/notion-calendar.jpg",
-        appStoreUrl: "https://apps.apple.com/app/notion-calendar/id1607562761",
-        websiteUrl: "https://www.notion.so/product/calendar",
-        price: "Free",
-        developer: "Notion Labs",
-        size: "89 MB",
-        compatibility: "macOS 12.0+, iOS 15.0+",
-        languages: "English, French, German, Spanish, Portuguese, Japanese, Korean",
-        ageRating: "4+",
-        description: `<p>Notion Calendar (formerly Cron) is a modern calendar that integrates with Notion and other services. Features clean design and smart planning capabilities.</p>
-        <p>Multi-calendar support, Google Calendar integration, and time blocking make it an excellent choice for productive work.</p>`,
-        features: [
-            { title: "Multi-calendar", desc: "Combine multiple Google and Notion calendars in one view." },
-            { title: "Scheduling Links", desc: "Create links for scheduling meetings without back-and-forth." },
-            { title: "Time Blocking", desc: "Visual time block planning for tasks." },
-            { title: "Menu Bar App", desc: "Quick access to schedule from the menu bar." },
-            { title: "Notion Integration", desc: "Direct integration with Notion databases." },
-            { title: "Keyboard First", desc: "Fast navigation using keyboard shortcuts." }
-        ],
-        whyWeLoveIt: "Notion Calendar reimagines calendar work. The scheduling links feature saves tons of time on meeting coordination.",
-        whoItsFor: "For Notion users and anyone who wants a modern and functional calendar."
-    },
-    {
-        id: 5,
-        name: "Spark",
-        tagline: "Smart email client",
-        category: "productivity",
-        categoryDisplay: "Productivity",
-        rating: 4.5,
-        reviewsCount: "85K",
-        iconImage: "/assets/icons/spark.png",
-        appStoreUrl: "https://apps.apple.com/app/spark-email-app-by-readdle/id1176895641",
-        websiteUrl: "https://sparkmailapp.com/",
-        price: "Free with Spark Premium",
-        developer: "Readdle Technologies Limited",
-        size: "198 MB",
-        compatibility: "macOS 11.0+, iOS 14.0+",
-        languages: "English, Russian, German, French, Spanish, Japanese, Chinese, and more",
-        ageRating: "4+",
-        description: `<p>Spark is a smart email client that automatically sorts emails by importance and helps achieve inbox zero. Features beautiful design and powerful team collaboration features.</p>
-        <p>Smart Inbox groups emails by categories: Personal, Notifications, Newsletters, helping you focus on what's important.</p>`,
-        features: [
-            { title: "Smart Inbox", desc: "Automatic email sorting by importance and categories." },
-            { title: "Send Later", desc: "Schedule emails to be sent at a specific time." },
-            { title: "Email Templates", desc: "Templates for quick replies to common emails." },
-            { title: "Team Features", desc: "Collaborate on emails, comments, delegation." },
-            { title: "Snooze", desc: "Snooze emails until the right moment." },
-            { title: "Quick Replies", desc: "Quick replies directly from notifications." }
-        ],
-        whyWeLoveIt: "Spark makes email manageable again. Smart Inbox actually works and helps you not drown in the email flood.",
-        whoItsFor: "For everyone who receives a lot of email and wants to manage it more effectively. Especially useful for teams."
-    },
-    {
-        id: 21,
-        name: "OmniFocus 4",
-        tagline: "The most powerful GTD task manager",
-        category: "productivity",
-        categoryDisplay: "Productivity",
-        rating: 4.8,
-        reviewsCount: "15K",
-        iconImage: "/assets/icons/omnifocus.jpg",
-        appStoreUrl: "https://apps.apple.com/app/omnifocus-4/id1542143627",
-        websiteUrl: "https://www.omnigroup.com/omnifocus",
-        price: "$9.99/month or $149.99 (one-time)",
-        developer: "The Omni Group",
-        size: "68.4 MB",
-        compatibility: "macOS 13.0+, iOS 16.0+",
-        languages: "English, German, French, Spanish, Japanese, Chinese",
-        ageRating: "4+",
-        description: `<p>OmniFocus 4 is the gold standard for GTD (Getting Things Done) implementation. This powerhouse task manager offers unmatched flexibility and depth for organizing complex projects and tasks.</p>
-        <p>With custom perspectives, powerful review mode, and seamless Apple ecosystem integration, OmniFocus helps you maintain complete control over your commitments and projects.</p>`,
-        features: [
-            { title: "Custom Perspectives", desc: "Create personalized views to see exactly what you need, when you need it." },
-            { title: "Review Mode", desc: "Built-in weekly review feature to keep your system current and trusted." },
-            { title: "Forecast View", desc: "See tasks and calendar events together for better planning." },
-            { title: "Tags & Contexts", desc: "Organize tasks by location, tool, energy level, or any criteria." },
-            { title: "Defer Dates", desc: "Hide tasks until you can actually work on them." },
-            { title: "Shortcuts & Siri", desc: "Deep integration with iOS automation and voice control." }
-        ],
-        whyWeLoveIt: "OmniFocus is for serious GTD practitioners who need maximum flexibility. The review feature is exceptional — it actually makes weekly reviews enjoyable. No other task manager matches its depth.",
-        whoItsFor: "GTD practitioners managing complex projects and multiple areas of responsibility. Ideal for professionals who need a trusted system they can customize completely."
-    },
-    {
         id: 22,
         name: "Nirvana",
         tagline: "Pure GTD methodology in a clean interface",
@@ -240,36 +120,6 @@ export const appsData = [
         ],
         whyWeLoveIt: "Nirvana is GTD done right. No bloat, no unnecessary features — just a clean implementation of the methodology. The Focus view is brilliant for selecting what to work on today.",
         whoItsFor: "GTD purists who want a system that follows the methodology without extra complexity. Great for those new to GTD who want proper guidance."
-    },
-    {
-        id: 23,
-        name: "Todoist",
-        tagline: "Simple yet powerful task management for everyone",
-        category: "productivity",
-        categoryDisplay: "Productivity",
-        rating: 4.8,
-        reviewsCount: "580K",
-        iconImage: "/assets/icons/todoist.png",
-        appStoreUrl: "https://apps.apple.com/app/todoist-to-do-list-planner/id585829637",
-        websiteUrl: "https://todoist.com/",
-        price: "Free / $4/month Pro",
-        developer: "Doist Inc.",
-        size: "98.2 MB",
-        compatibility: "macOS 10.15+, iOS 14.0+, Windows, Android, Web",
-        languages: "English, Russian, German, French, Spanish, Portuguese, Japanese, Chinese, and 10+ more",
-        ageRating: "4+",
-        description: `<p>Todoist is the most popular task manager in the world for a reason. It strikes the perfect balance between simplicity and power, making it accessible to beginners while offering enough features for power users.</p>
-        <p>With natural language input, powerful filters, and integrations with 80+ apps, Todoist fits seamlessly into any workflow. The generous free tier makes it easy to get started.</p>`,
-        features: [
-            { title: "Natural Language", desc: "Type 'call mom tomorrow at 3pm' and Todoist understands." },
-            { title: "Projects & Sections", desc: "Organize tasks into projects with sections and sub-tasks." },
-            { title: "Labels & Filters", desc: "Create custom views with powerful filter queries." },
-            { title: "Karma System", desc: "Gamification to build and maintain productivity habits." },
-            { title: "80+ Integrations", desc: "Connect with Gmail, Slack, Calendar, and more." },
-            { title: "Cross-Platform", desc: "Works everywhere — Mac, iOS, Windows, Android, Web." }
-        ],
-        whyWeLoveIt: "Todoist just works. The natural language input is the best in class, and the free tier is genuinely useful. It's the easiest recommendation for anyone starting with task management.",
-        whoItsFor: "Everyone — from students to executives. Perfect for GTD beginners, teams, and anyone who wants reliable task management without complexity."
     },
 
     // ============================================
@@ -306,66 +156,6 @@ export const appsData = [
         whoItsFor: "For everyone who frequently copies and pastes: designers, developers, writers, managers."
     },
     {
-        id: 7,
-        name: "Caramba Switcher",
-        tagline: "Auto keyboard layout switcher",
-        category: "utilities",
-        categoryDisplay: "Utilities",
-        rating: 4.8,
-        reviewsCount: "3.2K",
-        iconImage: "/assets/icons/caramba.png",
-        appStoreUrl: "https://apps.apple.com/app/caramba-switcher/id1565826179",
-        websiteUrl: "https://caramba.tools/",
-        price: "Free with Pro version",
-        developer: "Caramba Tools",
-        size: "12.8 MB",
-        compatibility: "macOS 11.0+",
-        languages: "English, Russian",
-        ageRating: "4+",
-        description: `<p>Caramba Switcher automatically detects the language you're typing in and switches the keyboard layout. Especially useful for those who write in multiple languages.</p>
-        <p>The app uses dictionary analysis and machine learning to detect input language.</p>`,
-        features: [
-            { title: "Auto-switching", desc: "Automatic layout switching while typing." },
-            { title: "Text Correction", desc: "Fix text typed in wrong layout." },
-            { title: "Dictionaries", desc: "Support for custom dictionaries and technical terms." },
-            { title: "App-specific Rules", desc: "Different settings for different apps." },
-            { title: "Statistics", desc: "Switch statistics and time saved." },
-            { title: "Hotkeys", desc: "Customizable keyboard shortcuts." }
-        ],
-        whyWeLoveIt: "Caramba solves one of the most annoying problems when working with multiple languages. Just type — the app will figure it out.",
-        whoItsFor: "For everyone who regularly types in multiple languages and is tired of manual layout switching."
-    },
-    {
-        id: 8,
-        name: "Rectangle",
-        tagline: "Window management with keyboard",
-        category: "utilities",
-        categoryDisplay: "Utilities",
-        rating: 4.9,
-        reviewsCount: "15K",
-        iconImage: "/assets/icons/rectangle.svg",
-        appStoreUrl: null,
-        websiteUrl: "https://rectangleapp.com/",
-        price: "Free (Open Source)",
-        developer: "Ryan Hanson",
-        size: "8.2 MB",
-        compatibility: "macOS 10.15+",
-        languages: "English",
-        ageRating: "4+",
-        description: `<p>Rectangle is a free open-source app for window management using keyboard shortcuts. Quickly position windows to half, quarter of the screen, or other positions.</p>
-        <p>Based on Spectacle code but actively developed and supports modern macOS versions.</p>`,
-        features: [
-            { title: "Keyboard Shortcuts", desc: "Quick window positioning using hotkeys." },
-            { title: "Snap Areas", desc: "Drag windows to screen edges for automatic resizing." },
-            { title: "Multiple Displays", desc: "Multi-monitor support." },
-            { title: "Customizable", desc: "Full keyboard shortcut customization." },
-            { title: "Open Source", desc: "Free, open source, no ads." },
-            { title: "Menu Bar App", desc: "Minimal system presence." }
-        ],
-        whyWeLoveIt: "Rectangle is a must-have for productive Mac work. Free, simple, and does exactly what you need.",
-        whoItsFor: "For all Mac users who work with multiple windows simultaneously."
-    },
-    {
         id: 9,
         name: "Bartender",
         tagline: "Menu bar organization",
@@ -394,40 +184,6 @@ export const appsData = [
         ],
         whyWeLoveIt: "Bartender is the only solution for those with an overcrowded menu bar. After installing, you wonder how you lived without it.",
         whoItsFor: "For users with many menu bar apps who want organization."
-    },
-
-    // ============================================
-    // DESIGN APPS
-    // ============================================
-    {
-        id: 10,
-        name: "Figma",
-        tagline: "Design and prototyping in the browser",
-        category: "design",
-        categoryDisplay: "Design",
-        rating: 4.8,
-        reviewsCount: "120K",
-        iconImage: "/assets/icons/figma.svg",
-        appStoreUrl: null,
-        websiteUrl: "https://www.figma.com/",
-        price: "Free for individuals, paid teams",
-        developer: "Figma, Inc.",
-        size: "Web app / Desktop app",
-        compatibility: "Web, macOS, Windows",
-        languages: "English, Japanese",
-        ageRating: "4+",
-        description: `<p>Figma is a professional interface design tool that works in the browser. Features powerful real-time collaboration capabilities.</p>
-        <p>Became the industry standard for UI/UX design thanks to its convenience and team collaboration features.</p>`,
-        features: [
-            { title: "Real-time Collaboration", desc: "Multiple designers can work on a file simultaneously." },
-            { title: "Components", desc: "Reusable components with variants and auto layout." },
-            { title: "Prototyping", desc: "Create interactive prototypes without code." },
-            { title: "Dev Mode", desc: "Developer mode with code and specs." },
-            { title: "Plugins", desc: "Huge plugin library for extended capabilities." },
-            { title: "Version History", desc: "Version history with rollback capability." }
-        ],
-        whyWeLoveIt: "Figma changed the approach to interface design. Collaboration, browser accessibility, and powerful functionality — all in one.",
-        whoItsFor: "For UI/UX designers, product teams, and anyone creating interfaces."
     },
 
     // ============================================
@@ -492,36 +248,6 @@ export const appsData = [
         ],
         whyWeLoveIt: "CyberGhost takes the guesswork out of streaming with clearly labeled servers for each platform. If you want to watch Netflix US or BBC iPlayer, just pick the right server and you're done. The 45-day money-back guarantee is the longest in the industry.",
         whoItsFor: "Streaming enthusiasts who want hassle-free access to geo-restricted content. Also great for VPN beginners thanks to its simple interface."
-    },
-    {
-        id: 13,
-        name: "Private Internet Access",
-        tagline: "Proven no-logs VPN",
-        category: "vpn",
-        categoryDisplay: "VPN",
-        rating: 4.6,
-        reviewsCount: "156K",
-        iconImage: "/assets/icons/pia.jpg",
-        appStoreUrl: "https://apps.apple.com/app/private-internet-access-vpn/id955626407",
-        websiteUrl: "https://www.privateinternetaccess.com/",
-        price: "Free with Subscription",
-        developer: "Private Internet Access, Inc.",
-        size: "89.7 MB",
-        compatibility: "iOS 14.0 or later, macOS",
-        languages: "English, Spanish, German, French, Dutch, Russian, and 12 more",
-        ageRating: "4+",
-        description: `<p>Private Internet Access (PIA) is a veteran VPN service with a proven track record of protecting user privacy. Their no-logs policy has been tested in court multiple times, always confirming they keep no user data.</p>
-        <p>With unlimited device connections and highly customizable settings, PIA is a favorite among tech-savvy users who want full control over their VPN experience.</p>`,
-        features: [
-            { title: "Unlimited Devices", desc: "Connect as many devices as you want with one subscription." },
-            { title: "Court-Proven No-Logs", desc: "No-logs policy verified in multiple legal cases." },
-            { title: "WireGuard Protocol", desc: "Modern protocol for fast speeds and strong security." },
-            { title: "MACE Ad Blocker", desc: "Built-in ad and malware blocker." },
-            { title: "Port Forwarding", desc: "Advanced feature for torrenting and hosting." },
-            { title: "Open Source Apps", desc: "Fully open-source apps for transparency." }
-        ],
-        whyWeLoveIt: "PIA's no-logs policy isn't just marketing – it's been proven in court. The unlimited device connections make it incredible value, and the open-source apps mean you can verify the security yourself. Advanced users will love the customization options.",
-        whoItsFor: "Privacy-focused users who want a proven, trustworthy VPN. Great for families with the unlimited device policy."
     },
     {
         id: 14,
@@ -616,126 +342,6 @@ export const appsData = [
         ],
         whyWeLoveIt: "Wispr Flow genuinely replaces your keyboard for most typing tasks. The AI editing is remarkably good at understanding what you meant to say, not just what you said. At 170+ words per minute, it's 3-4x faster than typing.",
         whoItsFor: "Anyone who types a lot — writers, developers, professionals. Especially valuable for people with RSI or those who think faster than they type."
-    },
-    {
-        id: 17,
-        name: "Superwhisper",
-        tagline: "Private AI dictation that stays on your Mac",
-        category: "voice",
-        categoryDisplay: "Voice Dictation",
-        rating: 4.9,
-        reviewsCount: "12K",
-        iconImage: "/assets/icons/superwhisper.jpg",
-        appStoreUrl: null,
-        websiteUrl: "https://superwhisper.com/",
-        price: "$10/month or $99/year",
-        developer: "Superwhisper",
-        size: "1.2 GB (includes AI models)",
-        compatibility: "macOS 13.0+ (Apple Silicon recommended)",
-        languages: "English, Spanish, French, German, Italian, Portuguese, Japanese, Chinese, and 90+ more",
-        ageRating: "4+",
-        description: `<p>Superwhisper runs OpenAI's Whisper model entirely on your Mac — no cloud, no internet required, complete privacy. Your voice never leaves your device.</p>
-        <p>The standout feature is custom "modes" — create prompts for different tasks like formal emails, casual messages, or meeting notes. Each mode transforms your speech differently.</p>`,
-        features: [
-            { title: "100% Local", desc: "All processing happens on-device. Your voice data never leaves your Mac." },
-            { title: "Custom Modes", desc: "Create prompts for different contexts — formal, casual, technical, etc." },
-            { title: "Offline Ready", desc: "Works without internet once models are downloaded." },
-            { title: "Apple Silicon Optimized", desc: "Blazing fast on M1/M2/M3 Macs with Neural Engine." },
-            { title: "Global Hotkey", desc: "Start dictating from any app with a keyboard shortcut." },
-            { title: "99+ Languages", desc: "Whisper supports nearly 100 languages." }
-        ],
-        whyWeLoveIt: "For anyone handling sensitive information — legal, medical, financial — Superwhisper is the only choice. Zero data leaves your Mac. The custom modes feature is brilliant for adapting output to different contexts.",
-        whoItsFor: "Privacy-conscious professionals, healthcare workers, lawyers, journalists, or anyone who can't risk their voice data in the cloud."
-    },
-    {
-        id: 18,
-        name: "MacWhisper",
-        tagline: "Transcribe audio files with Whisper AI locally",
-        category: "voice",
-        categoryDisplay: "Voice Dictation",
-        rating: 4.7,
-        reviewsCount: "8.5K",
-        iconImage: "/assets/icons/macwhisper.png",
-        appStoreUrl: null,
-        websiteUrl: "https://goodsnooze.gumroad.com/l/macwhisper",
-        price: "Free / $29 Pro (one-time)",
-        developer: "Good Snooze",
-        size: "150 MB - 3 GB (depends on model)",
-        compatibility: "macOS 13.0+ (Apple Silicon)",
-        languages: "99 languages supported by Whisper",
-        ageRating: "4+",
-        description: `<p>MacWhisper brings OpenAI's Whisper speech recognition to your Mac as a native app. Drag and drop audio or video files to get accurate transcriptions — all processed locally on your device.</p>
-        <p>Perfect for transcribing meetings, interviews, podcasts, or any recorded audio. The Pro version adds real-time dictation and advanced export options.</p>`,
-        features: [
-            { title: "Local Processing", desc: "All transcription happens on your Mac — completely offline capable." },
-            { title: "Drag & Drop", desc: "Simply drop audio/video files to transcribe." },
-            { title: "Multiple Formats", desc: "Supports MP3, WAV, M4A, MP4, MOV, and more." },
-            { title: "Timestamps", desc: "Get word-level timestamps for easy navigation." },
-            { title: "Export Options", desc: "Export as TXT, SRT, VTT, CSV, or JSON." },
-            { title: "Batch Processing", desc: "Transcribe multiple files at once (Pro)." }
-        ],
-        whyWeLoveIt: "MacWhisper is the simplest way to transcribe audio on Mac. No accounts, no subscriptions for basic use, no uploading files anywhere. The free version is genuinely useful, and the Pro upgrade is a one-time purchase.",
-        whoItsFor: "Journalists, podcasters, researchers, students — anyone who needs to transcribe recordings. Great for meeting notes and interview transcription."
-    },
-    {
-        id: 19,
-        name: "VoiceInk",
-        tagline: "Free, open-source voice typing for Mac",
-        category: "voice",
-        categoryDisplay: "Voice Dictation",
-        rating: 4.6,
-        reviewsCount: "5.2K",
-        iconImage: "/assets/icons/voiceink.png",
-        appStoreUrl: null,
-        websiteUrl: "https://github.com/VoiceInk/VoiceInk",
-        price: "Free (Open Source)",
-        developer: "VoiceInk Community",
-        size: "500 MB - 2 GB (with models)",
-        compatibility: "macOS 12.0+",
-        languages: "100+ languages via Whisper models",
-        ageRating: "4+",
-        description: `<p>VoiceInk is a free, open-source voice-to-text application for macOS that leverages OpenAI's Whisper models for accurate transcription. All processing happens locally — your voice data stays on your device.</p>
-        <p>As an open-source project, VoiceInk is transparent, customizable, and community-driven. No subscriptions, no accounts, no data collection.</p>`,
-        features: [
-            { title: "100% Free", desc: "Completely free and open-source. No hidden costs or subscriptions." },
-            { title: "Privacy First", desc: "All processing is local. No internet required after model download." },
-            { title: "100+ Languages", desc: "Supports all languages available in Whisper models." },
-            { title: "System-wide", desc: "Works across all applications via system integration." },
-            { title: "Customizable", desc: "Open-source means you can modify and extend it." },
-            { title: "Active Community", desc: "Regular updates and community-driven improvements." }
-        ],
-        whyWeLoveIt: "VoiceInk proves that excellent voice typing doesn't have to cost anything. It's completely free, respects your privacy, and the community keeps improving it. Perfect for users who value open-source software.",
-        whoItsFor: "Open-source enthusiasts, privacy advocates, developers, and anyone who wants powerful voice typing without paying for subscriptions."
-    },
-    {
-        id: 20,
-        name: "Voicy",
-        tagline: "Fast, accurate voice typing across all apps",
-        category: "voice",
-        categoryDisplay: "Voice Dictation",
-        rating: 4.7,
-        reviewsCount: "9.8K",
-        iconImage: "/assets/icons/voicy.png",
-        appStoreUrl: null,
-        websiteUrl: "https://usevoicy.com/",
-        price: "$8.49/month or $220 lifetime",
-        developer: "Voicy",
-        size: "95 MB",
-        compatibility: "macOS 12.0+, Windows 10+",
-        languages: "50+ languages with 99%+ accuracy",
-        ageRating: "4+",
-        description: `<p>Voicy delivers professional-grade voice typing with over 99% accuracy in 50+ languages. It works across all your applications and features smart punctuation, formatting, and voice commands.</p>
-        <p>The app offers both cloud and local processing options, letting you choose between maximum speed or complete privacy.</p>`,
-        features: [
-            { title: "99%+ Accuracy", desc: "Industry-leading accuracy across 50+ languages." },
-            { title: "Hybrid Processing", desc: "Choose between cloud (faster) or local (private) processing." },
-            { title: "Voice Commands", desc: "Control your Mac with voice — open apps, navigate, format text." },
-            { title: "Custom Vocabulary", desc: "Add technical terms, names, and jargon for better recognition." },
-            { title: "Lifetime Option", desc: "One-time payment option available — no ongoing subscription." },
-            { title: "Cross-Platform", desc: "Works on both macOS and Windows." }
-        ],
-        whyWeLoveIt: "Voicy hits the sweet spot between features and price. The lifetime license option is great for users who hate subscriptions. The hybrid processing model lets you choose speed or privacy based on the task.",
-        whoItsFor: "Professionals who want reliable voice typing without the premium price. Great for bilingual users with its excellent multi-language support."
     }
 ];
 
@@ -784,7 +390,6 @@ export const categories = [
     { id: 'all', name: 'All Apps', icon: '🔥' },
     { id: 'productivity', name: 'Productivity', icon: '⚡' },
     { id: 'utilities', name: 'Utilities', icon: '🔧' },
-    { id: 'design', name: 'Design', icon: '🎨' },
     { id: 'vpn', name: 'VPN', icon: '🛡️' },
     { id: 'voice', name: 'Voice Dictation', icon: '🎙️' },
 ];
@@ -795,18 +400,11 @@ export const categories = [
  */
 export const setups = [
     {
-        id: 'product-manager',
-        name: 'Product Manager Kit',
-        icon: '📊',
-        description: 'Essential apps for product managers',
-        appIds: [1, 3, 4, 5, 6, 10] // Things 3, Obsidian, Notion Calendar, Spark, Paste, Figma
-    },
-    {
         id: 'macos-newcomer',
         name: 'macOS Newcomer Kit',
         icon: '🍎',
         description: 'Must-have apps for Windows switchers',
-        appIds: [6, 7, 8, 9] // Paste, Caramba Switcher, Rectangle, Bartender
+        appIds: [6, 9] // Paste, Bartender
     }
 ];
 
