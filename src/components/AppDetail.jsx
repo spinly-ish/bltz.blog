@@ -13,6 +13,7 @@ import { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getAppById, getAppsByCategory } from '../data/appsData';
 import AppCard from './AppCard';
+import NotFound from './NotFound';
 
 function AppDetail() {
     // useParams — хук React Router, извлекает параметры из URL
@@ -26,19 +27,9 @@ function AppDetail() {
     // Получаем данные приложения по ID
     const app = getAppById(id);
     
-    // Если приложение не найдено — показываем ошибку
+    // Если приложение не найдено — показываем 404
     if (!app) {
-        return (
-            <main className="main">
-                <div className="detail-container">
-                    <div className="error-message">
-                        <h1>App not found</h1>
-                        <p>The app with ID {id} doesn't exist.</p>
-                        <Link to="/" className="btn btn-primary">Back to Home</Link>
-                    </div>
-                </div>
-            </main>
-        );
+        return <NotFound />;
     }
 
     // Деструктуризация данных приложения

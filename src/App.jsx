@@ -13,6 +13,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
 import AppDetail from './components/AppDetail'
+import NotFound from './components/NotFound'
 
 function App() {
     // Filter state: { type: 'category' | 'setup', id: string }
@@ -46,6 +47,9 @@ function App() {
                 {/* App detail page */}
                 {/* :id — dynamic parameter, accessible via useParams() */}
                 <Route path="/app/:id" element={<AppDetail />} />
+
+                {/* 404 — catch-all for unknown routes */}
+                <Route path="*" element={<NotFound />} />
             </Routes>
 
             {/* Footer — site footer */}
