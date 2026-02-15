@@ -12,3 +12,4 @@ iOS App Reviews & Recommendations — affiliate website for curated iOS apps.
 - Index updated for Hero section
 - Anumation added in Hero section
 - Apps rearranged
+- Video added
