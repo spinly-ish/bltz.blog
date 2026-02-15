@@ -61,7 +61,8 @@ export const appsData = [
         ],
         whyWeLoveIt: "Things 3 is that rare case when an app is both beautiful and functional. It's not overloaded with features but has everything you need. Sync is instant, and the native design is a joy to use.",
         whoItsFor: "For those who appreciate quality design and want to organize tasks using GTD methodology without unnecessary complexity.",
-        videoUrl: "/assets/videos/things.mp4"
+        videoUrl: "/assets/videos/things.mp4",
+        videoPoster: "/assets/videos/things-poster.jpg"
     },
     {
         id: 3,
