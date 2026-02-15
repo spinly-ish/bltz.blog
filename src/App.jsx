@@ -14,6 +14,7 @@ import Footer from './components/Footer'
 import HomePage from './pages/HomePage'
 import AppDetail from './components/AppDetail'
 import NotFound from './components/NotFound'
+import SubmitPage from './pages/SubmitPage'
 
 function App() {
     // Filter state: { type: 'category' | 'setup', id: string }
@@ -47,6 +48,9 @@ function App() {
                 {/* App detail page */}
                 {/* :id — dynamic parameter, accessible via useParams() */}
                 <Route path="/app/:id" element={<AppDetail />} />
+
+                {/* Submit app page */}
+                <Route path="/submit" element={<SubmitPage />} />
 
                 {/* 404 — catch-all for unknown routes */}
                 <Route path="*" element={<NotFound />} />
