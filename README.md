@@ -16,3 +16,4 @@ iOS App Reviews & Recommendations — affiliate website for curated iOS apps.
 - Add playsinline and optional video poster support
 - videoPosters added
 - 404 fixed
+- Feedback form for developers added
