@@ -62,7 +62,7 @@ function AppDetail() {
         features,
         whyWeLoveIt,
         whoItsFor,
-        screenshots
+        videoUrl
     } = app;
 
     // Получаем похожие приложения (той же категории, исключая текущее)
@@ -126,24 +126,17 @@ function AppDetail() {
                     </div>
                 </section>
 
-                {/* Screenshots Section - only show if screenshots exist */}
-                {screenshots && screenshots.length > 0 && (
-                    <section className="app-screenshots">
-                        <h2 className="section-title">Screenshots</h2>
-                        <div className="screenshots-grid">
-                            {screenshots.map((screenshot, index) => (
-                                <div key={index} className="screenshot-item">
-                                    <img src={screenshot} alt={`${name} screenshot ${index + 1}`} loading="lazy" />
-                                </div>
-                            ))}
-                        </div>
-                    </section>
-                )}
-
                 {/* Description Section */}
                 <section className="app-description">
                     <h2 className="section-title">About This App</h2>
                     <div className="description-content">
+                        {videoUrl && (
+                            <div className="app-video">
+                                <video controls preload="metadata">
+                                    <source src={videoUrl} type="video/mp4" />
+                                </video>
+                            </div>
+                        )}
                         <div dangerouslySetInnerHTML={{ __html: description }} />
                         
                         {/* Key Features */}

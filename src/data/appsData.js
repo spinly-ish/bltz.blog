@@ -24,7 +24,7 @@
  * - features: array of key features
  * - whyWeLoveIt: why we recommend it
  * - whoItsFor: target audience
- * - screenshots: array of screenshot paths (optional)
+ * - videoUrl: path to demo video (optional)
  */
 
 export const appsData = [
@@ -59,7 +59,8 @@ export const appsData = [
             { title: "Beautiful Design", desc: "Apple Design Award winning design." }
         ],
         whyWeLoveIt: "Things 3 is that rare case when an app is both beautiful and functional. It's not overloaded with features but has everything you need. Sync is instant, and the native design is a joy to use.",
-        whoItsFor: "For those who appreciate quality design and want to organize tasks using GTD methodology without unnecessary complexity."
+        whoItsFor: "For those who appreciate quality design and want to organize tasks using GTD methodology without unnecessary complexity.",
+        videoUrl: "/assets/videos/things.mp4"
     },
     {
         id: 3,
