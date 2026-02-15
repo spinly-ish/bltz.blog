@@ -25,6 +25,7 @@
  * - whyWeLoveIt: why we recommend it
  * - whoItsFor: target audience
  * - videoUrl: path to demo video (optional)
+ * - videoPoster: path to video preview image (optional)
  */
 
 export const appsData = [

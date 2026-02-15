@@ -62,7 +62,8 @@ function AppDetail() {
         features,
         whyWeLoveIt,
         whoItsFor,
-        videoUrl
+        videoUrl,
+        videoPoster
     } = app;
 
     // Получаем похожие приложения (той же категории, исключая текущее)
@@ -132,7 +133,7 @@ function AppDetail() {
                     <div className="description-content">
                         {videoUrl && (
                             <div className="app-video">
-                                <video controls preload="metadata">
+                                <video controls preload="metadata" playsInline {...(videoPoster ? { poster: videoPoster } : {})}>
                                     <source src={videoUrl} type="video/mp4" />
                                 </video>
                             </div>
