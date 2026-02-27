@@ -2,63 +2,39 @@
  * App.jsx — Root application component
  *
  * Responsible for:
- * 1. Routing (React Router)
- * 2. Page layout (Header, Footer)
- * 3. Filter state management (lifted from HomePage for Header access)
+ * 1. Routing (React Router) with EN/RU language support
+ * 2. LangLayout wraps Header + Outlet + Footer per language
  */
 
-import { useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import Header from './components/Header'
-import Footer from './components/Footer'
+import LangLayout from './components/LangLayout'
 import HomePage from './pages/HomePage'
 import AppDetail from './components/AppDetail'
 import NotFound from './components/NotFound'
 import SubmitPage from './pages/SubmitPage'
 
 function App() {
-    // Filter state: { type: 'category' | 'setup', id: string }
-    const [activeFilter, setActiveFilter] = useState({
-        type: 'category',
-        id: 'all'
-    });
-
-    // Search query state
-    const [searchQuery, setSearchQuery] = useState('');
-
     return (
-        <>
-            {/* Header — site header with navigation */}
-            <Header
-                showNav={true}
-                activeFilter={activeFilter}
-                onFilterChange={setActiveFilter}
-                searchQuery={searchQuery}
-                onSearchChange={setSearchQuery}
-            />
-
-            {/* Routes — route container */}
-            <Routes>
-                {/* Home page — app list */}
-                <Route
-                    path="/"
-                    element={<HomePage activeFilter={activeFilter} searchQuery={searchQuery} />}
-                />
-
-                {/* App detail page */}
-                {/* :id — dynamic parameter, accessible via useParams() */}
+        <Routes>
+            {/* English routes (default, no prefix) */}
+            <Route element={<LangLayout lang="en" />}>
+                <Route path="/" element={<HomePage />} />
                 <Route path="/app/:id" element={<AppDetail />} />
-
-                {/* Submit app page */}
                 <Route path="/submit" element={<SubmitPage />} />
+            </Route>
 
-                {/* 404 — catch-all for unknown routes */}
+            {/* Russian routes (/ru prefix) */}
+            <Route element={<LangLayout lang="ru" />}>
+                <Route path="/ru" element={<HomePage />} />
+                <Route path="/ru/app/:id" element={<AppDetail />} />
+                <Route path="/ru/submit" element={<SubmitPage />} />
+            </Route>
+
+            {/* 404 — catch-all */}
+            <Route element={<LangLayout lang="en" />}>
                 <Route path="*" element={<NotFound />} />
-            </Routes>
-
-            {/* Footer — site footer */}
-            <Footer />
-        </>
+            </Route>
+        </Routes>
     );
 }
 

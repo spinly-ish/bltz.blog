@@ -9,11 +9,13 @@ import { useState, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { categories, setups } from '../data/appsData'
+import { useLanguage } from '../i18n/LanguageContext'
 
 function HeaderNav({ activeFilter, onFilterChange }) {
     const [openMenu, setOpenMenu] = useState(null);
     const timeoutRef = useRef(null);
     const navigate = useNavigate();
+    const { t, langPrefix } = useLanguage();
 
     const handleMouseEnter = (menuId) => {
         clearTimeout(timeoutRef.current);
@@ -27,7 +29,7 @@ function HeaderNav({ activeFilter, onFilterChange }) {
     const handleItemClick = (type, id) => {
         onFilterChange({ type, id });
         setOpenMenu(null);
-        navigate('/');
+        navigate(langPrefix + '/');
     };
 
     // Check if a filter item is active
@@ -47,7 +49,7 @@ function HeaderNav({ activeFilter, onFilterChange }) {
                     className={`nav-trigger ${activeFilter.type === 'category' ? 'active' : ''}`}
                     type="button"
                 >
-                    CATEGORIES
+                    {t('nav.categories')}
                     <span className="nav-arrow">▾</span>
                 </button>
 
@@ -62,7 +64,7 @@ function HeaderNav({ activeFilter, onFilterChange }) {
                                     type="button"
                                 >
                                     <span className="nav-dropdown-icon">{category.icon}</span>
-                                    <span className="nav-dropdown-text">{category.name}</span>
+                                    <span className="nav-dropdown-text">{t(`cat.${category.id}`)}</span>
                                 </button>
                             ))}
                         </div>
@@ -80,7 +82,7 @@ function HeaderNav({ activeFilter, onFilterChange }) {
                     className={`nav-trigger ${activeFilter.type === 'setup' ? 'active' : ''}`}
                     type="button"
                 >
-                    SETUPS
+                    {t('nav.setups')}
                     <span className="nav-arrow">▾</span>
                 </button>
 
@@ -96,8 +98,8 @@ function HeaderNav({ activeFilter, onFilterChange }) {
                                 >
                                     <span className="nav-dropdown-icon">{setup.icon}</span>
                                     <div className="nav-dropdown-item-content">
-                                        <span className="nav-dropdown-text">{setup.name}</span>
-                                        <span className="nav-dropdown-desc">{setup.description}</span>
+                                        <span className="nav-dropdown-text">{t(`setup.${setup.id}`)}</span>
+                                        <span className="nav-dropdown-desc">{t(`setup.${setup.id}.desc`)}</span>
                                     </div>
                                 </button>
                             ))}

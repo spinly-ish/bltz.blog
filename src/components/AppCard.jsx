@@ -1,26 +1,18 @@
 /**
- * AppCard.jsx — Компонент карточки приложения
- * 
- * Это ПЕРЕИСПОЛЬЗУЕМЫЙ компонент — одна из главных идей React!
- * Вместо генерации HTML строк (как в vanilla JS), мы описываем
- * UI декларативно через JSX.
- * 
- * Props (входные параметры):
- * - app: объект с данными приложения
- * 
- * Преимущества React-компонента:
- * 1. Типобезопасность — легко добавить PropTypes или TypeScript
- * 2. Изоляция — компонент не зависит от внешнего состояния
- * 3. Тестируемость — можно тестировать отдельно
- * 4. Переиспользование — используется и на главной, и в Related Apps
+ * AppCard.jsx — Reusable app card component
+ *
+ * Props:
+ * - app: app data object
  */
 
 import { Link } from 'react-router-dom'
-// Импортируем PropTypes для валидации props (опционально, но полезно)
 import PropTypes from 'prop-types'
+import { useLanguage } from '../i18n/LanguageContext'
 
 function AppCard({ app }) {
-    // Деструктуризация объекта app для удобства
+    const { localizeApp, langPrefix } = useLanguage();
+    const localized = localizeApp(app);
+
     const {
         id,
         name,
@@ -29,17 +21,14 @@ function AppCard({ app }) {
         categoryDisplay,
         rating,
         iconImage
-    } = app;
+    } = localized;
 
     return (
-        // Link из React Router — правильный способ навигации в SPA
-        // to={`/app/${id}`} — относительный путь, basename добавится автоматически
         <Link
-            to={`/app/${id}`}
+            to={`${langPrefix}/app/${id}`}
             className="app-card"
             data-category={category}
         >
-            {/* Иконка приложения */}
             <div className="app-icon">
                 <img
                     src={iconImage}
@@ -47,13 +36,11 @@ function AppCard({ app }) {
                     loading="lazy"
                 />
             </div>
-            
-            {/* Информация о приложении */}
+
             <div className="app-info">
                 <h3 className="app-name">{name}</h3>
                 <p className="app-tagline">{tagline}</p>
-                
-                {/* Метаданные: категория и рейтинг */}
+
                 <div className="app-meta">
                     <span className="app-category">{categoryDisplay}</span>
                     <span className="app-rating">⭐ {rating}</span>
@@ -63,8 +50,6 @@ function AppCard({ app }) {
     );
 }
 
-// PropTypes — документация и валидация props
-// Помогает отловить ошибки на этапе разработки
 AppCard.propTypes = {
     app: PropTypes.shape({
         id: PropTypes.number.isRequired,

@@ -1,7 +1,7 @@
 /**
  * Header.jsx — Site header with navigation
  *
- * Contains logo, search field, dropdown navigation, and theme toggle.
+ * Contains logo, search field, dropdown navigation, theme toggle, and language switcher.
  * Navigation is only shown on the home page.
  */
 
@@ -9,22 +9,25 @@ import { Link, useNavigate } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import HeaderNav from './HeaderNav'
 import ThemeToggle from './ThemeToggle'
+import LanguageSwitcher from './LanguageSwitcher'
+import { useLanguage } from '../i18n/LanguageContext'
 
 function Header({ showNav = false, activeFilter, onFilterChange, searchQuery = '', onSearchChange }) {
     const navigate = useNavigate();
+    const { t, langPrefix } = useLanguage();
 
     const handleLogoClick = (e) => {
         e.preventDefault();
         onFilterChange?.({ type: 'category', id: 'all' });
         onSearchChange?.('');
-        navigate('/');
+        navigate(langPrefix + '/');
     };
 
     return (
         <header className="header">
             <div className="header-container">
                 {/* Logo — link to home, resets filters */}
-                <Link to="/" className="logo" onClick={handleLogoClick}>
+                <Link to={langPrefix + '/'} className="logo" onClick={handleLogoClick}>
                     <span className="logo-icon">⚡</span>
                     <span className="logo-text">bltz</span>
                 </Link>
@@ -43,7 +46,7 @@ function Header({ showNav = false, activeFilter, onFilterChange, searchQuery = '
                             <input
                                 type="text"
                                 className="search-input"
-                                placeholder="Search apps..."
+                                placeholder={t('search.placeholder')}
                                 value={searchQuery}
                                 onChange={(e) => onSearchChange?.(e.target.value)}
                             />
@@ -59,8 +62,9 @@ function Header({ showNav = false, activeFilter, onFilterChange, searchQuery = '
                     </div>
                 )}
 
-                {/* Right section with theme toggle */}
+                {/* Right section with theme toggle and language switcher */}
                 <div className="header-right">
+                    <LanguageSwitcher />
                     <ThemeToggle />
                 </div>
             </div>

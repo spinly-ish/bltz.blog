@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react';
+import { useLanguage } from '../i18n/LanguageContext';
 
 function SubmitPage() {
+    const { t } = useLanguage();
+
     const [form, setForm] = useState({
         developerName: '',
         email: '',
@@ -8,7 +11,7 @@ function SubmitPage() {
         appUrl: '',
         message: ''
     });
-    const [status, setStatus] = useState('idle'); // idle | submitting | success | error
+    const [status, setStatus] = useState('idle');
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -44,8 +47,8 @@ function SubmitPage() {
             <div className="submit-page">
                 <div className="submit-success">
                     <div className="submit-success-icon">&#10003;</div>
-                    <h2>Thank you!</h2>
-                    <p>Your app has been submitted for review. We'll check it out soon.</p>
+                    <h2>{t('submit.thankYou')}</h2>
+                    <p>{t('submit.successMessage')}</p>
                 </div>
             </div>
         );
@@ -53,14 +56,14 @@ function SubmitPage() {
 
     return (
         <div className="submit-page">
-            <h1 className="submit-title">Submit Your App</h1>
+            <h1 className="submit-title">{t('submit.title')}</h1>
             <p className="submit-subtitle">
-                Are you a developer? Suggest your app for review on bltz.blog.
+                {t('submit.subtitle')}
             </p>
 
             <form className="submit-form" onSubmit={handleSubmit}>
                 <div className="form-group">
-                    <label className="form-label" htmlFor="developerName">Developer Name</label>
+                    <label className="form-label" htmlFor="developerName">{t('submit.developerName')}</label>
                     <input
                         className="form-input"
                         type="text"
@@ -73,7 +76,7 @@ function SubmitPage() {
                 </div>
 
                 <div className="form-group">
-                    <label className="form-label" htmlFor="email">Email</label>
+                    <label className="form-label" htmlFor="email">{t('submit.email')}</label>
                     <input
                         className="form-input"
                         type="email"
@@ -86,7 +89,7 @@ function SubmitPage() {
                 </div>
 
                 <div className="form-group">
-                    <label className="form-label" htmlFor="appName">App Name</label>
+                    <label className="form-label" htmlFor="appName">{t('submit.appName')}</label>
                     <input
                         className="form-input"
                         type="text"
@@ -99,7 +102,7 @@ function SubmitPage() {
                 </div>
 
                 <div className="form-group">
-                    <label className="form-label" htmlFor="appUrl">App Store / Website URL</label>
+                    <label className="form-label" htmlFor="appUrl">{t('submit.appUrl')}</label>
                     <input
                         className="form-input"
                         type="url"
@@ -112,7 +115,7 @@ function SubmitPage() {
                 </div>
 
                 <div className="form-group">
-                    <label className="form-label" htmlFor="message">Message</label>
+                    <label className="form-label" htmlFor="message">{t('submit.message')}</label>
                     <textarea
                         className="form-textarea"
                         id="message"
@@ -124,7 +127,7 @@ function SubmitPage() {
                 </div>
 
                 {status === 'error' && (
-                    <p className="submit-error">Something went wrong. Please try again.</p>
+                    <p className="submit-error">{t('submit.error')}</p>
                 )}
 
                 <button
@@ -132,7 +135,7 @@ function SubmitPage() {
                     type="submit"
                     disabled={status === 'submitting'}
                 >
-                    {status === 'submitting' ? 'Submitting...' : 'Submit App'}
+                    {status === 'submitting' ? t('submit.submitting') : t('submit.submitApp')}
                 </button>
             </form>
         </div>

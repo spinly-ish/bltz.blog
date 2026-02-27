@@ -1,23 +1,16 @@
 /**
  * NotFound.jsx — 404 page with typewriter search animation
- *
- * Shows an animated typewriter that "searches" through app categories
- * before landing on "This page..." — not found.
  */
 
 import { Link } from 'react-router-dom'
 import useTypewriter from '../hooks/useTypewriter'
-
-const SEARCH_PHRASES = [
-    'Best VPN apps...',
-    'Task managers...',
-    'Clipboard tools...',
-    'System utilities...',
-    'This page...',
-];
+import { useLanguage } from '../i18n/LanguageContext'
 
 function NotFound() {
-    const typedText = useTypewriter(SEARCH_PHRASES, {
+    const { t, langPrefix } = useLanguage();
+
+    const phrases = t('notFound.phrases');
+    const typedText = useTypewriter(phrases, {
         typeSpeed: 70,
         deleteSpeed: 40,
         pauseTime: 1500,
@@ -33,11 +26,11 @@ function NotFound() {
                     <span className="hero-cursor" />
                 </div>
                 <p className="not-found-message">
-                    This page didn't make it into our collection.<br />
-                    But your perfect setup is just one click away.
+                    {t('notFound.message.line1')}<br />
+                    {t('notFound.message.line2')}
                 </p>
-                <Link to="/" className="btn btn-primary not-found-btn">
-                    Browse All Apps
+                <Link to={langPrefix + '/'} className="btn btn-primary not-found-btn">
+                    {t('notFound.browseAll')}
                 </Link>
             </div>
         </main>

@@ -5,17 +5,21 @@
  * - App card grid
  * - Filtering by categories and setups
  *
- * Filter state is lifted to App.jsx for Header access.
+ * Filter state comes from LangLayout via Outlet context.
  */
 
-import PropTypes from 'prop-types'
+import { useOutletContext } from 'react-router-dom'
 import AppGrid from '../components/AppGrid'
 import useTypewriter from '../hooks/useTypewriter'
-import { getAppsByCategory, getAppsBySetup, getSetupById, categories, appsData } from '../data/appsData'
+import { getAppsByCategory, getAppsBySetup, getSetupById, appsData } from '../data/appsData'
+import { useLanguage } from '../i18n/LanguageContext'
 
-const HERO_WORDS = ['app', 'tool', 'workflow'];
+function HomePage() {
+    const { activeFilter, searchQuery = '' } = useOutletContext();
+    const { t } = useLanguage();
 
-function HomePage({ activeFilter, searchQuery = '' }) {
+    const heroWords = t('hero.words');
+
     // Get filtered apps based on filter type and search query
     const getFilteredApps = () => {
         let apps;
@@ -50,35 +54,33 @@ function HomePage({ activeFilter, searchQuery = '' }) {
     // Get title based on current filter
     const getTitle = () => {
         if (searchQuery.trim()) {
-            return 'Search Results';
+            return t('content.searchResults');
         }
         if (activeFilter.type === 'category') {
-            const category = categories.find(c => c.id === activeFilter.id);
-            return category ? category.name : 'All Apps';
+            return t(`cat.${activeFilter.id}`) || t('content.allApps');
         } else if (activeFilter.type === 'setup') {
             const setup = getSetupById(activeFilter.id);
-            return setup ? setup.name : 'Setup';
+            return setup ? t(`setup.${setup.id}`) : t('content.setup');
         }
-        return 'All Apps';
+        return t('content.allApps');
     };
 
     // Get subtitle based on current filter
     const getSubtitle = () => {
         if (searchQuery.trim()) {
             const count = filteredApps.length;
-            return count === 0
-                ? 'No apps found'
-                : `Found ${count} app${count !== 1 ? 's' : ''} for "${searchQuery}"`;
+            if (count === 0) return t('content.noAppsFound');
+            return `${t('content.found')} ${count} ${count !== 1 ? t('content.apps') : t('content.app')} ${t('content.for')} "${searchQuery}"`;
         }
         if (activeFilter.type === 'setup') {
             const setup = getSetupById(activeFilter.id);
-            return setup ? setup.description : 'Curated app collection';
+            return setup ? t(`setup.${setup.id}.desc`) : t('content.curatedCollection');
         }
-        return 'Curated collection of the best macOS apps';
+        return t('content.subtitle');
     };
 
     const showHero = activeFilter.id === 'all' && activeFilter.type === 'category' && !searchQuery.trim();
-    const typedWord = useTypewriter(HERO_WORDS);
+    const typedWord = useTypewriter(heroWords);
 
     return (
         <main className="main">
@@ -88,10 +90,10 @@ function HomePage({ activeFilter, searchQuery = '' }) {
                     <section className="hero">
                         <div className="hero-content">
                             <h1 className="hero-title">
-                                Find the right <span className="hero-typed">{typedWord}</span><span className="hero-cursor" /> in 30&nbsp;seconds.
+                                {t('hero.title.prefix')}<span className="hero-typed">{typedWord}</span><span className="hero-cursor" />{t('hero.title.suffix')}
                             </h1>
                             <p className="hero-subtitle">
-                                Get a ready answer — not another list of endless options. One best pick + why + a short demo.
+                                {t('hero.subtitle')}
                             </p>
                         </div>
                         <div className="hero-video">
@@ -116,13 +118,5 @@ function HomePage({ activeFilter, searchQuery = '' }) {
         </main>
     );
 }
-
-HomePage.propTypes = {
-    activeFilter: PropTypes.shape({
-        type: PropTypes.oneOf(['category', 'setup']).isRequired,
-        id: PropTypes.string.isRequired
-    }).isRequired,
-    searchQuery: PropTypes.string,
-};
 
 export default HomePage;
