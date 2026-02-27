@@ -17,3 +17,4 @@ iOS App Reviews & Recommendations — affiliate website for curated iOS apps.
 - videoPosters added
 - 404 fixed
 - Feedback form for developers added
+- RU language added
