@@ -15,6 +15,7 @@ function AppCard({ app }) {
 
     const {
         id,
+        slug,
         name,
         tagline,
         category,
@@ -25,7 +26,7 @@ function AppCard({ app }) {
 
     return (
         <Link
-            to={`${langPrefix}/app/${id}`}
+            to={`${langPrefix}/app/${slug || id}`}
             className="app-card"
             data-category={category}
         >
@@ -53,6 +54,7 @@ function AppCard({ app }) {
 AppCard.propTypes = {
     app: PropTypes.shape({
         id: PropTypes.number.isRequired,
+        slug: PropTypes.string,
         name: PropTypes.string.isRequired,
         tagline: PropTypes.string.isRequired,
         category: PropTypes.string.isRequired,

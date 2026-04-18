@@ -1,20 +1,24 @@
 # bltz.blog
 
-iOS App Reviews & Recommendations — affiliate website for curated iOS apps.
+**Find the right app in 30 seconds.** Curated app recommendations across macOS, iOS, Windows and the web — one best pick per task with a short demo, instead of endless top-100 lists.
 
-# Changes
-- Dropdown categories added
-- Minor scrolling problem fixed
-- Loop error fixed
-- Dark/light theme added
-- Search added
-- New apps added
-- Index updated for Hero section
-- Anumation added in Hero section
-- Apps rearranged
-- Video added
-- Add playsinline and optional video poster support
-- videoPosters added
-- 404 fixed
-- Feedback form for developers added
-- RU language added
+Live: [bltz.blog](https://bltz.blog)
+
+## Stack
+
+- React 18 + Vite 5 + React Router 7
+- Custom i18n (EN / RU)
+- Hosted on GitHub Pages
+
+## Development
+
+```bash
+npm install
+npm run dev       # dev server
+npm run build     # production build
+npm run preview   # preview production build
+```
+
+## Structure
+
+See `CLAUDE.md` for architecture notes and `docs/` for product strategy and backlog.

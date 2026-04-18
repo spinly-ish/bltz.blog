@@ -19,14 +19,18 @@ function App() {
             {/* English routes (default, no prefix) */}
             <Route element={<LangLayout lang="en" />}>
                 <Route path="/" element={<HomePage />} />
-                <Route path="/app/:id" element={<AppDetail />} />
+                <Route path="/category/:categoryId" element={<HomePage />} />
+                <Route path="/setup/:setupId" element={<HomePage />} />
+                <Route path="/app/:slug" element={<AppDetail />} />
                 <Route path="/submit" element={<SubmitPage />} />
             </Route>
 
             {/* Russian routes (/ru prefix) */}
             <Route element={<LangLayout lang="ru" />}>
                 <Route path="/ru" element={<HomePage />} />
-                <Route path="/ru/app/:id" element={<AppDetail />} />
+                <Route path="/ru/category/:categoryId" element={<HomePage />} />
+                <Route path="/ru/setup/:setupId" element={<HomePage />} />
+                <Route path="/ru/app/:slug" element={<AppDetail />} />
                 <Route path="/ru/submit" element={<SubmitPage />} />
             </Route>
 

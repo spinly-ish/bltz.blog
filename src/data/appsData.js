@@ -34,6 +34,7 @@ export const appsData = [
     // ============================================
     {
         id: 1,
+        slug: "things-3",
         name: "Things 3",
         tagline: "The best task manager for macOS and iOS",
         category: "task-management",
@@ -66,6 +67,7 @@ export const appsData = [
     },
     {
         id: 3,
+        slug: "obsidian",
         name: "Obsidian",
         tagline: "Personal knowledge base on Markdown",
         category: "task-management",
@@ -96,6 +98,7 @@ export const appsData = [
     },
     {
         id: 22,
+        slug: "nirvana",
         name: "Nirvana",
         tagline: "Pure GTD methodology in a clean interface",
         category: "task-management",
@@ -130,6 +133,7 @@ export const appsData = [
     // ============================================
     {
         id: 6,
+        slug: "paste",
         name: "Paste",
         tagline: "Clipboard manager",
         category: "typing-clipboard",
@@ -163,6 +167,7 @@ export const appsData = [
     // ============================================
     {
         id: 9,
+        slug: "bartender",
         name: "Bartender",
         tagline: "Menu bar organization",
         category: "system-tools",
@@ -197,6 +202,7 @@ export const appsData = [
     // ============================================
     {
         id: 11,
+        slug: "expressvpn",
         name: "ExpressVPN",
         tagline: "Fast, secure & easy to use",
         category: "vpn",
@@ -227,6 +233,7 @@ export const appsData = [
     },
     {
         id: 12,
+        slug: "cyberghost-vpn",
         name: "CyberGhost VPN",
         tagline: "Streaming-optimized servers",
         category: "vpn",
@@ -257,6 +264,7 @@ export const appsData = [
     },
     {
         id: 14,
+        slug: "nordvpn",
         name: "NordVPN",
         tagline: "Advanced security features",
         category: "vpn",
@@ -287,6 +295,7 @@ export const appsData = [
     },
     {
         id: 15,
+        slug: "surfshark",
         name: "Surfshark",
         tagline: "Unlimited devices, great value",
         category: "vpn",
@@ -318,6 +327,7 @@ export const appsData = [
 
     {
         id: 16,
+        slug: "wispr-flow",
         name: "Wispr Flow",
         tagline: "AI-powered voice typing that works everywhere",
         category: "typing-clipboard",
@@ -359,6 +369,26 @@ export const appsData = [
  */
 export function getAppById(id) {
     return appsData.find(app => app.id === parseInt(id));
+}
+
+/**
+ * Get app by slug
+ * @param {string} slug - App slug
+ * @returns {Object|undefined} - App object or undefined
+ */
+export function getAppBySlug(slug) {
+    return appsData.find(app => app.slug === slug);
+}
+
+/**
+ * Resolve app by slug or numeric id (for legacy /app/:id URLs)
+ * @param {string} slugOrId - slug or numeric id
+ * @returns {Object|undefined}
+ */
+export function getAppByParam(slugOrId) {
+    if (!slugOrId) return undefined;
+    if (/^\d+$/.test(slugOrId)) return getAppById(slugOrId);
+    return getAppBySlug(slugOrId);
 }
 
 /**

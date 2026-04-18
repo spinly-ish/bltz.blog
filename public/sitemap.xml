@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
-    <!-- Homepage -->
+    <!-- Home -->
     <url>
         <loc>https://bltz.blog/</loc>
         <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/" />
         <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/" />
-        <lastmod>2025-01-26</lastmod>
+        <lastmod>2026-04-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -16,219 +16,304 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/" />
         <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/" />
-        <lastmod>2025-01-26</lastmod>
+        <lastmod>2026-04-18</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
 
-    <!-- Submit Page -->
+    <!-- Categories -->
+    <url>
+        <loc>https://bltz.blog/category/vpn</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/category/vpn" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/category/vpn" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/category/vpn" />
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bltz.blog/ru/category/vpn</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/category/vpn" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/category/vpn" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/category/vpn" />
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://bltz.blog/category/task-management</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/category/task-management" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/category/task-management" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/category/task-management" />
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bltz.blog/ru/category/task-management</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/category/task-management" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/category/task-management" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/category/task-management" />
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://bltz.blog/category/typing-clipboard</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/category/typing-clipboard" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/category/typing-clipboard" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/category/typing-clipboard" />
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bltz.blog/ru/category/typing-clipboard</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/category/typing-clipboard" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/category/typing-clipboard" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/category/typing-clipboard" />
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://bltz.blog/category/system-tools</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/category/system-tools" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/category/system-tools" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/category/system-tools" />
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bltz.blog/ru/category/system-tools</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/category/system-tools" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/category/system-tools" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/category/system-tools" />
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Setups -->
+    <url>
+        <loc>https://bltz.blog/setup/macos-newcomer</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/setup/macos-newcomer" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/setup/macos-newcomer" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/setup/macos-newcomer" />
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://bltz.blog/ru/setup/macos-newcomer</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/setup/macos-newcomer" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/setup/macos-newcomer" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/setup/macos-newcomer" />
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+    </url>
+
+    <!-- Apps -->
+    <url>
+        <loc>https://bltz.blog/app/things-3</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/things-3" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/things-3" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/things-3" />
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bltz.blog/ru/app/things-3</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/things-3" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/things-3" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/things-3" />
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://bltz.blog/app/obsidian</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/obsidian" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/obsidian" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/obsidian" />
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bltz.blog/ru/app/obsidian</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/obsidian" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/obsidian" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/obsidian" />
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://bltz.blog/app/nirvana</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/nirvana" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/nirvana" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/nirvana" />
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bltz.blog/ru/app/nirvana</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/nirvana" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/nirvana" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/nirvana" />
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://bltz.blog/app/paste</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/paste" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/paste" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/paste" />
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bltz.blog/ru/app/paste</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/paste" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/paste" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/paste" />
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://bltz.blog/app/bartender</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/bartender" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/bartender" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/bartender" />
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bltz.blog/ru/app/bartender</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/bartender" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/bartender" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/bartender" />
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://bltz.blog/app/expressvpn</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/expressvpn" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/expressvpn" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/expressvpn" />
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bltz.blog/ru/app/expressvpn</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/expressvpn" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/expressvpn" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/expressvpn" />
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://bltz.blog/app/cyberghost-vpn</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/cyberghost-vpn" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/cyberghost-vpn" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/cyberghost-vpn" />
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bltz.blog/ru/app/cyberghost-vpn</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/cyberghost-vpn" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/cyberghost-vpn" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/cyberghost-vpn" />
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://bltz.blog/app/nordvpn</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/nordvpn" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/nordvpn" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/nordvpn" />
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bltz.blog/ru/app/nordvpn</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/nordvpn" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/nordvpn" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/nordvpn" />
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://bltz.blog/app/surfshark</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/surfshark" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/surfshark" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/surfshark" />
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bltz.blog/ru/app/surfshark</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/surfshark" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/surfshark" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/surfshark" />
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://bltz.blog/app/wispr-flow</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/wispr-flow" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/wispr-flow" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/wispr-flow" />
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://bltz.blog/ru/app/wispr-flow</loc>
+        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/wispr-flow" />
+        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/wispr-flow" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/wispr-flow" />
+        <lastmod>2026-04-18</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Submit -->
     <url>
         <loc>https://bltz.blog/submit</loc>
         <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/submit" />
         <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/submit" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/submit" />
-        <lastmod>2025-01-26</lastmod>
+        <lastmod>2026-04-18</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
+        <priority>0.4</priority>
     </url>
     <url>
         <loc>https://bltz.blog/ru/submit</loc>
         <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/submit" />
         <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/submit" />
         <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/submit" />
-        <lastmod>2025-01-26</lastmod>
+        <lastmod>2026-04-18</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.4</priority>
-    </url>
-
-    <!-- App Pages -->
-    <url>
-        <loc>https://bltz.blog/app/1</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/1" />
-        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/1" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/1" />
-        <lastmod>2025-01-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://bltz.blog/ru/app/1</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/1" />
-        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/1" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/1" />
-        <lastmod>2025-01-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <url>
-        <loc>https://bltz.blog/app/3</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/3" />
-        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/3" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/3" />
-        <lastmod>2025-01-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://bltz.blog/ru/app/3</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/3" />
-        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/3" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/3" />
-        <lastmod>2025-01-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <url>
-        <loc>https://bltz.blog/app/6</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/6" />
-        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/6" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/6" />
-        <lastmod>2025-01-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://bltz.blog/ru/app/6</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/6" />
-        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/6" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/6" />
-        <lastmod>2025-01-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <url>
-        <loc>https://bltz.blog/app/9</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/9" />
-        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/9" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/9" />
-        <lastmod>2025-01-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://bltz.blog/ru/app/9</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/9" />
-        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/9" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/9" />
-        <lastmod>2025-01-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <url>
-        <loc>https://bltz.blog/app/11</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/11" />
-        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/11" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/11" />
-        <lastmod>2025-01-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://bltz.blog/ru/app/11</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/11" />
-        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/11" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/11" />
-        <lastmod>2025-01-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <url>
-        <loc>https://bltz.blog/app/12</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/12" />
-        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/12" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/12" />
-        <lastmod>2025-01-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://bltz.blog/ru/app/12</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/12" />
-        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/12" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/12" />
-        <lastmod>2025-01-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <url>
-        <loc>https://bltz.blog/app/14</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/14" />
-        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/14" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/14" />
-        <lastmod>2025-01-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://bltz.blog/ru/app/14</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/14" />
-        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/14" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/14" />
-        <lastmod>2025-01-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <url>
-        <loc>https://bltz.blog/app/15</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/15" />
-        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/15" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/15" />
-        <lastmod>2025-01-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://bltz.blog/ru/app/15</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/15" />
-        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/15" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/15" />
-        <lastmod>2025-01-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <url>
-        <loc>https://bltz.blog/app/16</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/16" />
-        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/16" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/16" />
-        <lastmod>2025-01-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://bltz.blog/ru/app/16</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/16" />
-        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/16" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/16" />
-        <lastmod>2025-01-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-
-    <url>
-        <loc>https://bltz.blog/app/22</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/22" />
-        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/22" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/22" />
-        <lastmod>2025-01-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://bltz.blog/ru/app/22</loc>
-        <xhtml:link rel="alternate" hreflang="en" href="https://bltz.blog/app/22" />
-        <xhtml:link rel="alternate" hreflang="ru" href="https://bltz.blog/ru/app/22" />
-        <xhtml:link rel="alternate" hreflang="x-default" href="https://bltz.blog/app/22" />
-        <lastmod>2025-01-26</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.3</priority>
     </url>
 </urlset>

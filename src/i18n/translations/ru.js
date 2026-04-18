@@ -1,4 +1,13 @@
 export default {
+    // SEO
+    'seo.home.title': 'Лучшее приложение за 30 секунд',
+    'seo.home.description': 'Кураторские рекомендации приложений для macOS, iOS, Windows и web. Один лучший выбор под задачу с коротким демо — вместо бесконечных топ-100.',
+    'seo.submit.title': 'Предложить приложение',
+    'seo.submit.description': 'Вы разработчик? Предложите ваше приложение для обзора на bltz.blog.',
+    'seo.notFound.title': 'Страница не найдена',
+    'seo.notFound.description': 'Этой страницы нет в коллекции, но ваше идеальное приложение — в одном клике.',
+    'seo.app.title': '{name} — {tagline}',
+
     // Header
     'search.placeholder': 'Поиск приложений...',
     'nav.categories': 'КАТЕГОРИИ',
@@ -24,7 +33,7 @@ export default {
     // Content
     'content.allApps': 'Все приложения',
     'content.setup': 'Подборка',
-    'content.subtitle': 'Кураторская подборка лучших приложений для macOS',
+    'content.subtitle': 'Кураторская подборка приложений для разных платформ и задач',
     'content.searchResults': 'Результаты поиска',
     'content.noAppsFound': 'Ничего не найдено',
     'content.found': 'Найдено',

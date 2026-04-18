@@ -5,27 +5,39 @@
  */
 
 import { useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { getAppById, getAppsByCategory } from '../data/appsData';
+import { useParams, Link, Navigate } from 'react-router-dom';
+import { getAppByParam, getAppsByCategory } from '../data/appsData';
 import { useLanguage } from '../i18n/LanguageContext';
+import useSEO from '../hooks/useSEO';
 import AppCard from './AppCard';
 import NotFound from './NotFound';
 
 function AppDetail() {
-    const { id } = useParams();
+    const { slug } = useParams();
     const { t, localizeApp, langPrefix } = useLanguage();
 
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, [id]);
+    }, [slug]);
 
-    const rawApp = getAppById(id);
+    const rawApp = getAppByParam(slug);
+    const app = rawApp ? localizeApp(rawApp) : null;
+
+    useSEO({
+        title: app ? t('seo.app.title', { name: app.name, tagline: app.tagline }) : null,
+        description: app ? app.tagline : '',
+        path: app?.slug ? `${langPrefix}/app/${app.slug}` : '',
+        image: app?.iconImage,
+    });
 
     if (!rawApp) {
         return <NotFound />;
     }
 
-    const app = localizeApp(rawApp);
+    // Redirect legacy numeric /app/:id URLs to canonical slug URL
+    if (rawApp.slug && slug !== rawApp.slug) {
+        return <Navigate to={`${langPrefix}/app/${rawApp.slug}`} replace />;
+    }
 
     const {
         name,

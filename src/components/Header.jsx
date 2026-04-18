@@ -12,13 +12,12 @@ import ThemeToggle from './ThemeToggle'
 import LanguageSwitcher from './LanguageSwitcher'
 import { useLanguage } from '../i18n/LanguageContext'
 
-function Header({ showNav = false, activeFilter, onFilterChange, searchQuery = '', onSearchChange }) {
+function Header({ showNav = false, searchQuery = '', onSearchChange }) {
     const navigate = useNavigate();
     const { t, langPrefix } = useLanguage();
 
     const handleLogoClick = (e) => {
         e.preventDefault();
-        onFilterChange?.({ type: 'category', id: 'all' });
         onSearchChange?.('');
         navigate(langPrefix + '/');
     };
@@ -53,12 +52,7 @@ function Header({ showNav = false, activeFilter, onFilterChange, searchQuery = '
                         </div>
 
                         {/* Navigation dropdowns */}
-                        {activeFilter && onFilterChange && (
-                            <HeaderNav
-                                activeFilter={activeFilter}
-                                onFilterChange={onFilterChange}
-                            />
-                        )}
+                        <HeaderNav />
                     </div>
                 )}
 
@@ -74,11 +68,6 @@ function Header({ showNav = false, activeFilter, onFilterChange, searchQuery = '
 
 Header.propTypes = {
     showNav: PropTypes.bool,
-    activeFilter: PropTypes.shape({
-        type: PropTypes.oneOf(['category', 'setup']).isRequired,
-        id: PropTypes.string.isRequired
-    }),
-    onFilterChange: PropTypes.func,
     searchQuery: PropTypes.string,
     onSearchChange: PropTypes.func,
 };

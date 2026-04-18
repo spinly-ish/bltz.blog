@@ -1,4 +1,13 @@
 export default {
+    // SEO
+    'seo.home.title': 'Find the right app in 30 seconds',
+    'seo.home.description': 'Curated app recommendations across macOS, iOS, Windows and the web. One best pick per task with a 30-second demo — instead of endless top-100 lists.',
+    'seo.submit.title': 'Submit your app',
+    'seo.submit.description': 'Are you a developer? Suggest your app for review on bltz.blog.',
+    'seo.notFound.title': 'Page not found',
+    'seo.notFound.description': 'This page isn\'t in our collection, but your perfect app is one click away.',
+    'seo.app.title': '{name} — {tagline}',
+
     // Header
     'search.placeholder': 'Search apps...',
     'nav.categories': 'CATEGORIES',
@@ -24,7 +33,7 @@ export default {
     // Content
     'content.allApps': 'All Apps',
     'content.setup': 'Setup',
-    'content.subtitle': 'Curated collection of the best macOS apps',
+    'content.subtitle': 'Curated picks across platforms — one best app per task',
     'content.searchResults': 'Search Results',
     'content.noAppsFound': 'No apps found',
     'content.found': 'Found',

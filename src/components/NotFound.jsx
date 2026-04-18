@@ -4,10 +4,16 @@
 
 import { Link } from 'react-router-dom'
 import useTypewriter from '../hooks/useTypewriter'
+import useSEO from '../hooks/useSEO'
 import { useLanguage } from '../i18n/LanguageContext'
 
 function NotFound() {
     const { t, langPrefix } = useLanguage();
+
+    useSEO({
+        title: t('seo.notFound.title'),
+        description: t('seo.notFound.description'),
+    });
 
     const phrases = t('notFound.phrases');
     const typedText = useTypewriter(phrases, {

@@ -1,20 +1,19 @@
 /**
  * HeaderNav.jsx — Navigation with dropdown menus
  *
- * Product Hunt-style navigation with hover dropdowns.
- * Supports both categories and setups filtering.
+ * Product Hunt-style dropdowns. Active state derived from URL so each
+ * category/setup view has its own canonical URL (SEO).
  */
 
 import { useState, useRef } from 'react'
-import { useNavigate } from 'react-router-dom'
-import PropTypes from 'prop-types'
+import { Link, useLocation } from 'react-router-dom'
 import { categories, setups } from '../data/appsData'
 import { useLanguage } from '../i18n/LanguageContext'
 
-function HeaderNav({ activeFilter, onFilterChange }) {
+function HeaderNav() {
     const [openMenu, setOpenMenu] = useState(null);
     const timeoutRef = useRef(null);
-    const navigate = useNavigate();
+    const location = useLocation();
     const { t, langPrefix } = useLanguage();
 
     const handleMouseEnter = (menuId) => {
@@ -26,16 +25,18 @@ function HeaderNav({ activeFilter, onFilterChange }) {
         timeoutRef.current = setTimeout(() => setOpenMenu(null), 150);
     };
 
-    const handleItemClick = (type, id) => {
-        onFilterChange({ type, id });
-        setOpenMenu(null);
-        navigate(langPrefix + '/');
-    };
+    // Determine active filter from current URL
+    const rel = location.pathname.startsWith(langPrefix)
+        ? location.pathname.slice(langPrefix.length) || '/'
+        : location.pathname;
 
-    // Check if a filter item is active
-    const isActive = (type, id) => {
-        return activeFilter.type === type && activeFilter.id === id;
-    };
+    const categoryActive = rel === '/' || rel.startsWith('/category/');
+    const setupActive = rel.startsWith('/setup/');
+    const activeCategoryId = rel === '/' ? 'all' : rel.match(/^\/category\/([^/]+)/)?.[1];
+    const activeSetupId = rel.match(/^\/setup\/([^/]+)/)?.[1];
+
+    const categoryHref = (id) => id === 'all' ? `${langPrefix}/` : `${langPrefix}/category/${id}`;
+    const setupHref = (id) => `${langPrefix}/setup/${id}`;
 
     return (
         <nav className="header-nav">
@@ -46,7 +47,7 @@ function HeaderNav({ activeFilter, onFilterChange }) {
                 onMouseLeave={handleMouseLeave}
             >
                 <button
-                    className={`nav-trigger ${activeFilter.type === 'category' ? 'active' : ''}`}
+                    className={`nav-trigger ${categoryActive ? 'active' : ''}`}
                     type="button"
                 >
                     {t('nav.categories')}
@@ -57,15 +58,15 @@ function HeaderNav({ activeFilter, onFilterChange }) {
                     <div className="nav-dropdown">
                         <div className="nav-dropdown-content">
                             {categories.map(category => (
-                                <button
+                                <Link
                                     key={category.id}
-                                    className={`nav-dropdown-item ${isActive('category', category.id) ? 'active' : ''}`}
-                                    onClick={() => handleItemClick('category', category.id)}
-                                    type="button"
+                                    to={categoryHref(category.id)}
+                                    className={`nav-dropdown-item ${activeCategoryId === category.id ? 'active' : ''}`}
+                                    onClick={() => setOpenMenu(null)}
                                 >
                                     <span className="nav-dropdown-icon">{category.icon}</span>
                                     <span className="nav-dropdown-text">{t(`cat.${category.id}`)}</span>
-                                </button>
+                                </Link>
                             ))}
                         </div>
                     </div>
@@ -79,7 +80,7 @@ function HeaderNav({ activeFilter, onFilterChange }) {
                 onMouseLeave={handleMouseLeave}
             >
                 <button
-                    className={`nav-trigger ${activeFilter.type === 'setup' ? 'active' : ''}`}
+                    className={`nav-trigger ${setupActive ? 'active' : ''}`}
                     type="button"
                 >
                     {t('nav.setups')}
@@ -90,18 +91,18 @@ function HeaderNav({ activeFilter, onFilterChange }) {
                     <div className="nav-dropdown">
                         <div className="nav-dropdown-content">
                             {setups.map(setup => (
-                                <button
+                                <Link
                                     key={setup.id}
-                                    className={`nav-dropdown-item ${isActive('setup', setup.id) ? 'active' : ''}`}
-                                    onClick={() => handleItemClick('setup', setup.id)}
-                                    type="button"
+                                    to={setupHref(setup.id)}
+                                    className={`nav-dropdown-item ${activeSetupId === setup.id ? 'active' : ''}`}
+                                    onClick={() => setOpenMenu(null)}
                                 >
                                     <span className="nav-dropdown-icon">{setup.icon}</span>
                                     <div className="nav-dropdown-item-content">
                                         <span className="nav-dropdown-text">{t(`setup.${setup.id}`)}</span>
                                         <span className="nav-dropdown-desc">{t(`setup.${setup.id}.desc`)}</span>
                                     </div>
-                                </button>
+                                </Link>
                             ))}
                         </div>
                     </div>
@@ -110,13 +111,5 @@ function HeaderNav({ activeFilter, onFilterChange }) {
         </nav>
     );
 }
-
-HeaderNav.propTypes = {
-    activeFilter: PropTypes.shape({
-        type: PropTypes.oneOf(['category', 'setup']).isRequired,
-        id: PropTypes.string.isRequired
-    }).isRequired,
-    onFilterChange: PropTypes.func.isRequired,
-};
 
 export default HeaderNav;

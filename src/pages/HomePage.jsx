@@ -1,84 +1,92 @@
 /**
- * HomePage.jsx — Home page with app list
+ * HomePage.jsx — Listing page (all apps / category / setup)
  *
- * Contains:
- * - App card grid
- * - Filtering by categories and setups
+ * Filter is derived from URL:
+ *   /                     → all apps
+ *   /category/:categoryId → category filter
+ *   /setup/:setupId       → setup filter
  *
- * Filter state comes from LangLayout via Outlet context.
+ * Search query comes from LangLayout via Outlet context (not in URL —
+ * search is a UX convenience, not an SEO-meaningful page).
  */
 
-import { useOutletContext } from 'react-router-dom'
+import { useParams, useOutletContext } from 'react-router-dom'
 import AppGrid from '../components/AppGrid'
 import useTypewriter from '../hooks/useTypewriter'
+import useSEO from '../hooks/useSEO'
 import { getAppsByCategory, getAppsBySetup, getSetupById, appsData } from '../data/appsData'
 import { useLanguage } from '../i18n/LanguageContext'
 
 function HomePage() {
-    const { activeFilter, searchQuery = '' } = useOutletContext();
-    const { t } = useLanguage();
+    const { searchQuery = '' } = useOutletContext();
+    const { t, langPrefix } = useLanguage();
+    const { categoryId, setupId } = useParams();
 
-    const heroWords = t('hero.words');
+    const activeFilter = setupId
+        ? { type: 'setup', id: setupId }
+        : { type: 'category', id: categoryId || 'all' };
 
-    // Get filtered apps based on filter type and search query
-    const getFilteredApps = () => {
-        let apps;
+    const setup = activeFilter.type === 'setup' ? getSetupById(activeFilter.id) : null;
+    const categoryExists = activeFilter.type === 'category'
+        && (activeFilter.id === 'all' || appsData.some(a => a.category === activeFilter.id));
+    const isValidFilter = activeFilter.type === 'setup' ? !!setup : categoryExists;
 
-        // If searching, search across all apps
-        if (searchQuery.trim()) {
-            apps = appsData;
-        } else if (activeFilter.type === 'category') {
-            apps = getAppsByCategory(activeFilter.id);
-        } else if (activeFilter.type === 'setup') {
-            apps = getAppsBySetup(activeFilter.id);
-        } else {
-            apps = [];
-        }
+    // Derive filtered list
+    let apps;
+    if (searchQuery.trim()) {
+        apps = appsData;
+    } else if (activeFilter.type === 'category') {
+        apps = isValidFilter ? getAppsByCategory(activeFilter.id) : [];
+    } else {
+        apps = setup ? getAppsBySetup(activeFilter.id) : [];
+    }
 
-        // Apply search filter
-        if (searchQuery.trim()) {
-            const query = searchQuery.toLowerCase().trim();
-            apps = apps.filter(app =>
-                app.name.toLowerCase().includes(query) ||
-                app.tagline.toLowerCase().includes(query) ||
-                app.developer.toLowerCase().includes(query) ||
-                app.categoryDisplay.toLowerCase().includes(query)
-            );
-        }
+    if (searchQuery.trim()) {
+        const query = searchQuery.toLowerCase().trim();
+        apps = apps.filter(app =>
+            app.name.toLowerCase().includes(query) ||
+            app.tagline.toLowerCase().includes(query) ||
+            app.developer.toLowerCase().includes(query) ||
+            app.categoryDisplay.toLowerCase().includes(query)
+        );
+    }
 
-        return apps;
-    };
-
-    const filteredApps = getFilteredApps();
-
-    // Get title based on current filter
+    // Titles
     const getTitle = () => {
-        if (searchQuery.trim()) {
-            return t('content.searchResults');
-        }
-        if (activeFilter.type === 'category') {
-            return t(`cat.${activeFilter.id}`) || t('content.allApps');
-        } else if (activeFilter.type === 'setup') {
-            const setup = getSetupById(activeFilter.id);
-            return setup ? t(`setup.${setup.id}`) : t('content.setup');
-        }
-        return t('content.allApps');
+        if (searchQuery.trim()) return t('content.searchResults');
+        if (activeFilter.type === 'setup') return setup ? t(`setup.${setup.id}`) : t('content.setup');
+        return t(`cat.${activeFilter.id}`) || t('content.allApps');
     };
 
-    // Get subtitle based on current filter
     const getSubtitle = () => {
         if (searchQuery.trim()) {
-            const count = filteredApps.length;
+            const count = apps.length;
             if (count === 0) return t('content.noAppsFound');
             return `${t('content.found')} ${count} ${count !== 1 ? t('content.apps') : t('content.app')} ${t('content.for')} "${searchQuery}"`;
         }
         if (activeFilter.type === 'setup') {
-            const setup = getSetupById(activeFilter.id);
             return setup ? t(`setup.${setup.id}.desc`) : t('content.curatedCollection');
         }
         return t('content.subtitle');
     };
 
+    // SEO path + title per filter
+    const seoPath = activeFilter.type === 'setup'
+        ? `${langPrefix}/setup/${activeFilter.id}`
+        : activeFilter.id === 'all'
+            ? langPrefix || '/'
+            : `${langPrefix}/category/${activeFilter.id}`;
+
+    const seoTitle = activeFilter.id === 'all' && activeFilter.type === 'category'
+        ? t('seo.home.title')
+        : getTitle();
+    const seoDescription = activeFilter.id === 'all' && activeFilter.type === 'category'
+        ? t('seo.home.description')
+        : getSubtitle();
+
+    useSEO({ title: seoTitle, description: seoDescription, path: seoPath });
+
+    const heroWords = t('hero.words');
     const showHero = activeFilter.id === 'all' && activeFilter.type === 'category' && !searchQuery.trim();
     const typedWord = useTypewriter(heroWords);
 
@@ -111,8 +119,7 @@ function HomePage() {
                         <p className="content-subtitle">{getSubtitle()}</p>
                     </div>
 
-                    {/* AppGrid — card grid */}
-                    <AppGrid apps={filteredApps} />
+                    <AppGrid apps={apps} />
                 </section>
             </div>
         </main>

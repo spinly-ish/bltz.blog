@@ -1,8 +1,15 @@
 import { useState, useEffect } from 'react';
 import { useLanguage } from '../i18n/LanguageContext';
+import useSEO from '../hooks/useSEO';
 
 function SubmitPage() {
-    const { t } = useLanguage();
+    const { t, langPrefix } = useLanguage();
+
+    useSEO({
+        title: t('seo.submit.title'),
+        description: t('seo.submit.description'),
+        path: `${langPrefix}/submit`,
+    });
 
     const [form, setForm] = useState({
         developerName: '',

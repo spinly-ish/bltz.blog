@@ -5,13 +5,15 @@ import Header from './Header';
 import Footer from './Footer';
 
 function LangLayout({ lang = 'en' }) {
-    const [activeFilter, setActiveFilter] = useState({ type: 'category', id: 'all' });
     const [searchQuery, setSearchQuery] = useState('');
     const location = useLocation();
 
-    // Determine if we're on the home page (show nav)
+    // Determine if we're on a listing page (home, category, setup) — show search + nav
     const langPrefix = lang === 'en' ? '' : `/${lang}`;
-    const isHome = location.pathname === langPrefix || location.pathname === langPrefix + '/';
+    const rel = location.pathname.startsWith(langPrefix)
+        ? location.pathname.slice(langPrefix.length) || '/'
+        : location.pathname;
+    const isListing = rel === '/' || rel.startsWith('/category/') || rel.startsWith('/setup/');
 
     // Set document lang attribute and inject hreflang tags
     useEffect(() => {
@@ -42,13 +44,11 @@ function LangLayout({ lang = 'en' }) {
     return (
         <LanguageProvider lang={lang}>
             <Header
-                showNav={isHome}
-                activeFilter={activeFilter}
-                onFilterChange={setActiveFilter}
+                showNav={isListing}
                 searchQuery={searchQuery}
                 onSearchChange={setSearchQuery}
             />
-            <Outlet context={{ activeFilter, searchQuery }} />
+            <Outlet context={{ searchQuery, setSearchQuery }} />
             <Footer />
         </LanguageProvider>
     );
